@@ -1,0 +1,49 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navBar h1{
+    font-family: 'Pacifico', cursive;
+    color: red;
+    flex-grow: 3;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .navBar a{
+    margin: 0.5rem 0.5rem;
+    flex-grow:3;
+    text-decoration: none;
+  }
+  
+  .navBar .loginButtons , .navBar .profileButtons{
+    flex-grow: 2;
+    text-align: right;
+  }
+  .navBar .loginButtons button , .homeBody button{
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid red ;
+    background-color: transparent;
+  }
+  
+  .navBar .loginButtons button:hover , .homeBody button:hover{
+    border: 2px solid red ;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .navBar .ProfileAnchor {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: rgb(81, 80, 80);
+  
+  }
+  
+  .navBar .ProfileAnchor:hover{
+    color: black
+  }
