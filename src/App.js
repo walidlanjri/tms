@@ -4,6 +4,7 @@ import HomeFooter from "./HomeLogin/Footer";
 import HomeBody from "./HomeLogin/Home";
 import Login from "./HomeLogin/Login";
 import NavBar from "./HomePage/NavBar";
+import SideBar from "./HomePage/SideBar";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
 
           <Route path="/Home">
             <NavBar/>
+            <SideBar/>
           </Route>
 
         </Switch>
