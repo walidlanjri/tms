@@ -1,0 +1,13 @@
+.home h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .row{
+    display: flex;
+  }
+  
+  .column{
+    display: flex;
+    flex-direction: column;
+  }

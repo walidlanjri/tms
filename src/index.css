@@ -12,39 +12,19 @@ body{
 @import url("./CssStyles/navBar.css");
 @import url("./CssStyles/homeBodyLogin.css");
 @import url("./CssStyles/footer.css");
+@import url("./CssStyles/sideBar.css");
+@import url("./CssStyles/cards.css");
+@import url("./CssStyles/home.css");
 
-.menuIcon {
-  width: 2em;
-  height: 2em;
-  margin: 0 1rem 1rem 1rem;
-}
-
-.sideBar{
-  height: 88.5vh;
-  max-width: 16rem;
+.body{
+  display: flex;
 }
 
-.sideBar-collapsed{
-  height: 88.5vh;
-  max-width: 4rem
+.content{
+  background-color: #F5F3F4;
+  flex-grow: 1;
+  padding: 1.5rem;
 }
 
-.list a ,.shortList a{
-  display: block;
-  text-decoration: none;
-  padding: 1rem 1rem;
-  font-size: 1.25em;
-  color: black;
-}
 
-.list a i{
-  width:3rem;
-}
-.list a:hover ,.shortList a:hover{
-  background-color: rgb(254, 89, 89);
-  color: white;
-}
 
-.shortList a span{
-  display: none;
-}

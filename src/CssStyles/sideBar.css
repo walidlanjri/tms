@@ -1,0 +1,42 @@
+.menuIcon {
+    width: 2em;
+    height: 2em;
+    margin: 0 1rem 1rem 1rem;
+  }
+  
+  .sideBar,.sideBar-collapsed{
+    top: 1rem;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    position:sticky;
+  }
+  .sideBar{
+    height: 88.5vh;
+    width: 16rem;
+  }
+  
+  .sideBar-collapsed{
+    height: 88.5vh;
+    max-width: 4rem
+  }
+  
+  .list a ,.shortList a{
+    display: block;
+    text-decoration: none;
+    padding: 1rem 1rem;
+    font-size: 1.25em;
+    color: black;
+  }
+  
+  .list a i{
+    width:3rem;
+  }
+  .list a:hover ,.shortList a:hover{
+    background-color: rgb(254, 89, 89);
+    color: white;
+  }
+  
+  .shortList a span{
+    display: none;
+  }
