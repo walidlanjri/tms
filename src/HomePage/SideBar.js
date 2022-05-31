@@ -18,7 +18,7 @@ const SideBar = () => {
                 <img src="/menu_icons/menu_icon.png" alt="menu icon" className="menuIcon"/>
             </a>
             <div className={isExtended ? "list" : "shortList"}>
-                <a href="">
+                <a href="/Home">
                     <i class="fa-solid fa-house fa-lg"></i>
                     <span >Accueil</span>
                 </a>
