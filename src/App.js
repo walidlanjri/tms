@@ -1,9 +1,9 @@
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import HomeFooter from "./HomeLogin/Footer";
-import HomeBody from "./HomeLogin/Home";
-import Login from "./HomeLogin/Login";
-import NavBar from "./NavBar";
-import Body from "./HomePage/Body";
+import Footer from "./Components/HomeLogin/Footer";
+import FrontPage from "./Components/HomeLogin/FrontPage";
+import Login from "./Components/HomeLogin/Login";
+import NavBar from "./Components/NavBar";
+import Body from "./Components/HomePage/Body";
 
 
 
@@ -16,19 +16,17 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-
-            <HomeBody/>
-            <HomeFooter/>
+            <FrontPage/>
+            <Footer/>
           </Route>
           
           <Route path="/Login">
-
             <Login/>
-            <HomeFooter/>
+            <Footer/>
+
           </Route>
 
           <Route path="/Home">
-            
             <Body/>
           </Route>
 

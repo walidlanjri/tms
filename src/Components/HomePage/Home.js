@@ -1,5 +1,5 @@
-import Card from "../cards/Card";
-import SmallCard from "../cards/SmallCard";
+import Card from "../../cards/Card";
+import SmallCard from "../../cards/SmallCard";
 const Home = () => {
     return ( 
         <div className="home">

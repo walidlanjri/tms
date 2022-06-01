@@ -1,6 +1,7 @@
 import Home from "./Home";
 import SideBar from "./SideBar";
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import Products from "./Products";
 
 const Body = () => {
     return ( 
@@ -8,8 +9,11 @@ const Body = () => {
             <SideBar/>
             <div className="content">
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route path="/Home">
                         <Home/>
+                    </Route>
+                    <Route path="/Products">
+                        <Products/>
                     </Route>
                 </Switch>
 

@@ -24,7 +24,7 @@ const SideBar = () => {
                     <span >Accueil</span>
                 </Link>
 
-                <Link to="">
+                <Link to="/Products">
                     <i class="fa-solid fa-box fa-lg"></i>
                     <span >Produits</span>
                 </Link>
