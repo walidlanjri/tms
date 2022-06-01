@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 
 const SideBar = () => {
@@ -14,39 +14,40 @@ const SideBar = () => {
     
     return ( 
         <div className={isExtended ? "sideBar" : "sideBar-collapsed"}>
-            <a onClick={handleClick}>
-                <img src="/menu_icons/menu_icon.png" alt="menu icon" className="menuIcon"/>
-            </a>
+            <Link onClick={handleClick}>
+            <img src="/menu_icons/menu_icon.png" alt="menu icon" className="menuIcon"/>
+            </Link>
+
             <div className={isExtended ? "list" : "shortList"}>
-                <a href="/Home">
+                <Link to="/Home">
                     <i class="fa-solid fa-house fa-lg"></i>
                     <span >Accueil</span>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="">
                     <i class="fa-solid fa-box fa-lg"></i>
                     <span >Produits</span>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="">
                     <i class="fa-solid fa-truck fa-lg"></i>
                     <span>Livreurs</span>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="">
                     <i class="fa-solid fa-user fa-lg"></i>
                     <span>Clients</span>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="">
                     <i class="fa-solid fa-truck-fast fa-lg"></i>
                     <span>Expéditions</span>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="">
                  <i class="fa-solid fa-sliders fa-lg"></i>
                     <span>Paramètres </span>
-                </a>
+                </Link>
 
             </div>
         </div>

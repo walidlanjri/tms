@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const NavBar = () => {
     const [isLoggedIn,setLoggedIn]=useState(true);
     
@@ -11,17 +13,25 @@ const NavBar = () => {
     return ( 
         
     <div  className={isLoggedIn ? "navBarLogged" : "navBar"}>
-        <a href="/Home">
+        <Link to="/Home">
             <img src="transport64.png" alt="logo" />
-        </a>
+        </Link>
         <h1>MyTMS</h1>
         <div className="profileButtons">
-            <a href="/Login" className="ProfileAnchor">Mon profile</a>
-            <a href="/" className="ProfileAnchor">Se déconnecter </a>
+            <Link to="/Login" className="ProfileAnchor">
+                Mon profile
+            </Link>
+            <Link to="/" className="ProfileAnchor">
+                Se déconnecter
+            </Link>
         </div>
         <div className="loginButtons">
-                <a href="/Login"><button>Se connecter</button></a>
-                <button>S'inscrire</button>
+            <Link to="/Login">
+                <button>Se connecter</button>
+            </Link>
+            <Link to="/Register">
+            <button>S'inscrire</button>
+            </Link>
         </div>
     </div>
     );

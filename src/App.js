@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import HomeFooter from "./HomeLogin/Footer";
 import HomeBody from "./HomeLogin/Home";
 import Login from "./HomeLogin/Login";
-import NavBar from "./CssStyles/NavBar";
+import NavBar from "./NavBar";
 import Body from "./HomePage/Body";
 
 
@@ -14,7 +14,6 @@ function App() {
       <NavBar/>
       <div className="app">
 
-      
         <Switch>
           <Route exact path="/">
 

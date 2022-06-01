@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return ( 
         <footer>
           <div className="contact"> 
-            <a href="/">À propos de nous</a>
-            <a href="/">Contacter nous</a>
+            <Link to="/">À propos de nous</Link>
+            <Link to="/">Contacter nous</Link>
             <p>Copyright &copy; 2022</p>
           </div>
           
