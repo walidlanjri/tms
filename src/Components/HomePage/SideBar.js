@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
     const [isExtended,setIsExtended]=useState(true);
     
-    const handleClick=(e)=>{
-        if(isExtended)  setIsExtended(false);
-        if(!isExtended) setIsExtended(true);
-    
-    };
+    const handleClick=(e)=>setIsExtended(!isExtended);
+
     
     
     return ( 
