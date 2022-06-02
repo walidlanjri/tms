@@ -7,7 +7,7 @@ const NavBar = () => {
             <h1> MyTMS</h1>
             <div className="loginButtons">
             <a href="/Login"><button>Se connecter</button></a>
-            <button>S'inscrire</button>
+            <a href="/SignUp"><button>S'inscrire</button></a>
             </div>
       </div>
      );

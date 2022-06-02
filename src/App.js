@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import HomeFooter from "./HomeLogin/Footer";
 import HomeBody from "./HomeLogin/Home";
 import Login from "./HomeLogin/Login";
+import SignUp from "./HomeLogin/SignUp";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           
           <Route path="/Login">
             <Login/>
+          </Route>
+          <Route path="/SignUp">
+            <SignUp/>
           </Route>
 
         </Switch>

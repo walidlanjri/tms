@@ -3,7 +3,7 @@ const Home = () => {
         <div className="homeBody">
             <div className="homeContent">
             <h2>Bienvenue à notre application de gestion de transport <p> MyTMS </p></h2>
-            <button>S'inscrire</button>
+            <a href="/SignUp"><button>S'inscrire</button></a>
             </div>
       </div>
      );
