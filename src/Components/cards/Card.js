@@ -1,24 +1,25 @@
+import { Link } from "react-router-dom";
 const Card = () => {
     return ( 
         <div className="card">
             <h3>Top 5 clients</h3>
-            <a href="">
+            <Link to="/">
                 Ahmed walid
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/">
                 Youssef salah
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/">
                 Youssef salah
-            </a>
+            </Link>
 
-            <a href="">
+            <Link to="/">
                 Youssef salah
-            </a>
+            </Link>
 
-            <a href="">
+            <Link to="/">
                 Youssef salah
-            </a>
+            </Link>
         </div>
      );
 }

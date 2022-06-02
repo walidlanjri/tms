@@ -30,6 +30,10 @@ function App() {
             <Body/>
           </Route>
 
+          <Route path="/Products">
+            <Body/>
+          </Route>
+
         </Switch>
 
         

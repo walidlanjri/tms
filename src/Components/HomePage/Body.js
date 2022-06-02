@@ -1,7 +1,8 @@
 import Home from "./Home";
 import SideBar from "./SideBar";
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Products from "./Products";
+import {Route,Switch} from 'react-router-dom';
+import ProductsList from "./ProductsList";
+
 
 const Body = () => {
     return ( 
@@ -9,11 +10,11 @@ const Body = () => {
             <SideBar/>
             <div className="content">
                 <Switch>
-                    <Route path="/Home">
+                    <Route exact path="/Home">
                         <Home/>
                     </Route>
                     <Route path="/Products">
-                        <Products/>
+                        <ProductsList/>
                     </Route>
                 </Switch>
 

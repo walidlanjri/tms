@@ -13,18 +13,18 @@ body{
 @import url("./CssStyles/homeBodyLogin.css");
 @import url("./CssStyles/footer.css");
 @import url("./CssStyles/sideBar.css");
-@import url("./CssStyles/cards.css");
-@import url("./CssStyles/home.css");
-
+@import url("./CssStyles/table.css");
 .body{
   display: flex;
 }
 
 .content{
   background-color: #F5F3F4;
-  flex-grow: 1;
   padding: 1.5rem;
+  flex-grow: 1;
 }
-
-
+.content h2{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 

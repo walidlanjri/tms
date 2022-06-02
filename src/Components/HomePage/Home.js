@@ -1,5 +1,5 @@
-import Card from "../../cards/Card";
-import SmallCard from "../../cards/SmallCard";
+import Card from "../cards/Card";
+import SmallCard from "../cards/SmallCard";
 const Home = () => {
     return ( 
         <div className="home">
@@ -14,10 +14,6 @@ const Home = () => {
                     </div>
                     <div className="column">
                         <Card/>
-                    </div>
-                    <div className="column">
-                        <SmallCard/>
-                        <SmallCard/>
                     </div>
                     <div className="column">
                         <SmallCard/>
