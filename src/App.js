@@ -2,10 +2,9 @@ import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Footer from "./Components/HomeLogin/Footer";
 import FrontPage from "./Components/HomeLogin/FrontPage";
 import Login from "./Components/HomeLogin/Login";
-import NavBar from "./Components/NavBar";
 import Body from "./Components/HomePage/Body";
-
-
+import NavBar from "./Components/NavBar";
+import SignUp from "./Components/HomeLogin/SignUp";
 
 function App() {
   return (
@@ -36,6 +35,9 @@ function App() {
 
           <Route path="/Trucks">
             <Body/>
+          </Route>
+          <Route path="/SignUp">
+            <SignUp/>
           </Route>
 
           <Route path="/Clients">
