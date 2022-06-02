@@ -1,9 +1,11 @@
 
+
 .column1 {
     width: 50px;
     padding-left: 40px;
 
 }
+
 
 
 .column2 {
@@ -25,22 +27,7 @@
     text-align: center;
 }
 
-.column6 {
-    width: 100px;
-    text-align: center;
-}
 
-.column7 {
-    width: 100px;
-    text-align: center;
-}
-
-.column8 {
-    width: 10px;
-    text-align: right;
-    padding-right: 62px;
-    
-}
 
 
 @media screen and (max-width:992px) {
@@ -51,40 +38,33 @@
     }
 
     table tbody tr td:nth-child(3):before {
-        content: "Poids"
+        content: "Adresse"
     }
 
     table tbody tr td:nth-child(4):before {
-        content: "Hauteur"
+        content: "Nombre d'achat"
     }
 
     table tbody tr td:nth-child(5):before {
-        content: "Largeur"
+        content: "Rang"
     }
-    table tbody tr td:nth-child(6):before {
-        content: "Profondeur"
-    }
-    table tbody tr td:nth-child(7):before {
-        content: "Quanité"
-    }
+
+
 
     .column1,
     .column2,
     .column3,
     .column4,
     .column5,
-    .column6,
-    .column7,
-    .column8{
+    .column6{
         text-align: left
     }
 
-
+    td,th {
+        width: 100%
+    }
 
 
 }
-
-
-
 
   

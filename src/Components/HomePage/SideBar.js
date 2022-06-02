@@ -39,7 +39,7 @@ const SideBar = () => {
                     <span>Livreurs</span>
                 </Link>
 
-                <Link to="/">
+                <Link to="/Clients">
                     <i className="fa-solid fa-user fa-lg"></i>
                     <span>Clients</span>
                 </Link>

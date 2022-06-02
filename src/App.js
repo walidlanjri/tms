@@ -38,6 +38,10 @@ function App() {
             <Body/>
           </Route>
 
+          <Route path="/Clients">
+            <Body/>
+          </Route>
+
         </Switch>
 
         

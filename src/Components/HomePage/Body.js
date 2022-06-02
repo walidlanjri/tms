@@ -3,6 +3,8 @@ import SideBar from "./SideBar";
 import {Route,Switch} from 'react-router-dom';
 import ProductsList from "./ProductsList";
 import Truck from "./Truck";
+import Clients from "./Clients";
+
 
 
 
@@ -20,6 +22,9 @@ const Body = () => {
                     </Route>
                     <Route path="/Trucks">
                         <Truck/>
+                    </Route>
+                    <Route path="/Clients">
+                        <Clients/>
                     </Route>
                 </Switch>
 
