@@ -2,6 +2,8 @@ import Home from "./Home";
 import SideBar from "./SideBar";
 import {Route,Switch} from 'react-router-dom';
 import ProductsList from "./ProductsList";
+import Truck from "./Truck";
+
 
 
 const Body = () => {
@@ -15,6 +17,9 @@ const Body = () => {
                     </Route>
                     <Route path="/Products">
                         <ProductsList/>
+                    </Route>
+                    <Route path="/Trucks">
+                        <Truck/>
                     </Route>
                 </Switch>
 

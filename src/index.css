@@ -13,7 +13,9 @@ body{
 @import url("./CssStyles/homeBodyLogin.css");
 @import url("./CssStyles/footer.css");
 @import url("./CssStyles/sideBar.css");
-@import url("./CssStyles/table.css");
+@import url("./CssStyles/table-products.css");
+@import url("./CssStyles/table-trucks.css");
+@import url("./CssStyles/home.css");
 .body{
   display: flex;
 }

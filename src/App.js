@@ -34,6 +34,10 @@ function App() {
             <Body/>
           </Route>
 
+          <Route path="/Trucks">
+            <Body/>
+          </Route>
+
         </Switch>
 
         
