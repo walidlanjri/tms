@@ -1,10 +1,10 @@
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Footer from "./Components/HomeLogin/Footer";
-import FrontPage from "./Components/HomeLogin/FrontPage";
-import Login from "./Components/HomeLogin/Login";
-import Body from "./Components/HomePage/Body";
+import Footer from "./Components/Front pages/Footer";
+import FrontPage from "./Components/Front pages/FrontPage";
+import Login from "./Components/Front pages/Login";
+import Signup from './Components/Front pages/Signup';
+import Body from "./Components/Main pages/Body";
 import NavBar from "./Components/NavBar";
-import SignUp from "./Components/HomeLogin/SignUp";
 
 function App() {
   return (
@@ -19,17 +19,14 @@ function App() {
             <Footer/>
           </Route>
           
-          <Route path="/Login">
+          <Route path="/se connecter">
             <Login/>
             <Footer/>
           </Route>
-
-          <Route path="/SignUp">
-            <SignUp/>
+          <Route path="/s'inscrire">
+            <Signup/>
             <Footer/>
           </Route>
-          
-
           <Route path="/Home">
             <Body/>
           </Route>
@@ -48,6 +45,9 @@ function App() {
           </Route>
 
           <Route path="/Details">
+            <Body/>
+          </Route>
+          <Route path="/Profile">
             <Body/>
           </Route>
 

@@ -18,7 +18,8 @@ body{
 @import url("./CssStyles/table-trucks.css");
 @import url("./CssStyles/table-client.css");
 @import url("./CssStyles/home.css");
-@import url("./CssStyles/signup.css");
+@import url("./CssStyles/details.css");
+
 .body{
   display: flex;
 }
@@ -37,38 +38,74 @@ footer .contact a:hover{
   color: black
 }
 
-.infoField{
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.infoHeader{
-  display: inline-block;
-  width: 10rem;
-  font-weight: 800;
-}
-.infoData{
-  padding-left: 1rem;
-}
-
-.details{
+.loginContainer,.signupContainer{
+  display: flex;
+  flex-direction: column;
   background-color: white;
-  border-radius: 1rem;
-  padding: 1rem;
-  max-width:30rem;
+  padding: 2.2rem 2rem 0.4rem 2rem;
+  
 }
-.detailsContainer button{
-  background-color: #007BFF;
-  width: 5.5rem;
-  height: 2.4rem;
-  color: white;
-  border: none;
+.loginContainer{
+  width: 17rem;
+  height: 20rem;
+}
+.signupContainer{
+  width: 17rem;
+  height: 25rem;
+}
+
+.loginContainer h3,
+.loginContainer input,
+.newAccount,
+.signupContainer h3,
+.signupContainer input,
+.alreadyExist
+{
+ margin-bottom: 0.8rem;
+}
+
+.loginContainer h3 , .signupContainer h3{
+  font-size: 1.5rem;
+}
+.loginContainer label,.signupContainer label{
+  margin-bottom: 0.5rem;
+}
+
+.loginContainer input ,.signupContainer input{
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  border: 2px solid rgb(128, 127, 127);
+}
+.loginContainer input:focus , .signupContainer input:focus{
+  outline: none;
+  border: 2px solid #db151c;
+}
+
+
+.loginContainer button, .signupContainer button{
+  margin-bottom: 1.2rem;
+  margin-top: 0.6rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  font-size: 0.9rem;
-  margin-top: 1rem;
+  background-color: red;
+  color: white;
+  border: 2px solid red ;
+  font-size: 1.05rem;
 
 }
-.detailsContainer button:hover{
-  background-color: #0761c2;
+
+.loginContainer button:hover , .signupContainer button:hover{
   cursor: pointer;
+  background-color: rgb(174, 1, 1);
+  border-color:  rgb(174, 1, 1);
+}
+
+.alreadyExist a,.newAccount a{
+  margin-right: 2rem;
+  text-decoration: none;
+  color: rgb(81, 80, 80);
+}
+
+.alreadyExist a:hover,.newAccount a:hover{
+  color: black
 }

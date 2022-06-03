@@ -2,8 +2,15 @@ import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 const DetailsPage = () => {
     const location = useLocation();
-    const object = location.state;
-    console.log(object);
+    let object = location.state;
+    const Type = object.Type;
+    if (object.Type==="Profile"){
+        const FullName=object.Nom + object.Prenom
+        const image = object.Image;
+        object  = (({Nom, Prenom,Age,Adresse,Email,Role}) => ({Nom, Prenom,Age,Adresse,Email,Role}))(object);
+        console.log(object);
+    }
+   
 
 
 
