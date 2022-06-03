@@ -1,31 +1,34 @@
 
-
-.column1 {
-    width: 50px;
+.columnClient1 {
+    width: 30px;
     padding-left: 40px;
 
 }
 
-
-
-.column2 {
-    width: 160px
+.columnClient2 {
+    width: 150px
 }
 
-.column3 {
+.columnClient3 {
     width: 100px;
     text-align: center;
 }
 
-.column4 {
+.columnClient4 {
     width: 110px;
     text-align: center;
 }
 
-.column5 {
+.columnClient5 {
     width: 100px;
     text-align: center;
 }
+
+.columnClient6 {
+    width: 100px;
+    text-align: center;
+}
+
 
 
 
@@ -33,30 +36,33 @@
 @media screen and (max-width:992px) {
     
 
-    table tbody tr td:nth-child(2):before {
+    table tbody tr .columnClient2:before {
         content: "Nom"
     }
 
-    table tbody tr td:nth-child(3):before {
+    table tbody tr .columnClient3:before {
         content: "Adresse"
     }
 
-    table tbody tr td:nth-child(4):before {
+    table tbody tr .columnClient4::before {
         content: "Nombre d'achat"
     }
 
-    table tbody tr td:nth-child(5):before {
+    table tbody tr .columnClient5:before {
         content: "Rang"
+    }
+    table tbody tr .columnClient5:before {
+        content: none;
     }
 
 
 
-    .column1,
-    .column2,
-    .column3,
-    .column4,
-    .column5,
-    .column6{
+    .columnClient1,
+    .columnClient2,
+    .columnClient3,
+    .columnClient4,
+    .columnClient5,
+    .columnClient6{
         text-align: left
     }
 

@@ -18,6 +18,7 @@ body{
 @import url("./CssStyles/table-trucks.css");
 @import url("./CssStyles/table-client.css");
 @import url("./CssStyles/home.css");
+@import url("./CssStyles/signup.css");
 .body{
   display: flex;
 }

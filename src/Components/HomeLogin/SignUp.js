@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from './axios';
-import style from "../../style.css";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -83,7 +82,8 @@ const SignUp=()=>{
     }
 
     return(
-        <>
+        <div className="signUpPage">
+            
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -92,10 +92,12 @@ const SignUp=()=>{
                     </p>
                 </section>
             ) : (
-                <section>
+                
+                <section className="signUp">
+                    <h3>S'inscrire</h3>
+                    
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>S'inscrire</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form className="signUpForm" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Identifiant:
                             <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
@@ -116,18 +118,18 @@ const SignUp=()=>{
                         />
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
+                            4 à 24 caractères.<br />
+                            Doit commancer avec un letter.<br />
+                            Letters, nombres, _ , - sont autorisé.
                         </p>
-                        <label htmlFor="position">Role</label>
+                        <label htmlFor="position">Rôle:</label>
                         <select>
                             <option value="admin">Adminstrateur</option>
-                            <option value="client">client</option>
+                            <option value="client">Client</option>
                             <option value="chauffeur">Chauffeur</option>
                         </select>
                         <label htmlFor="password">
-                            Password:
+                            Mot de passe:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
@@ -144,14 +146,14 @@ const SignUp=()=>{
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                            8 à 24 caractères .<br />
+                            Doit inclure des lettres en majuscule et minuscule, un nombre et un caractère special.<br />
+                           
                         </p>
 
 
                         <label htmlFor="confirm_pwd">
-                            Confirmation Password:
+                            Confrimation de mot de passe:
                             <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
@@ -166,23 +168,24 @@ const SignUp=()=>{
                             onFocus={() => setMatchFocus(true)}
                             onBlur={() => setMatchFocus(false)}
                         />
-                        <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                        <p id="confirmnote" className={matchFocus && !validMatch ? "instructions2" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
-                            Must match the first password input field.
+                            Les deux mots de passe sont pas les mêmes.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>S'inscrire</button>
+                        <p>
+                            Vous avez un compte?<br />
+                            <span className="line">
+                                {/*put router link here*/}
+                                <a href="/Login">Se connecter</a>
+                            </span>
+                        </p>
                     </form>
-                    <p>
-                        Vous avez un compte?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="/Login">Se connecter</a>
-                        </span>
-                    </p>
+                    
                 </section>
             )}
-        </>
+        </div>
 
 
     );

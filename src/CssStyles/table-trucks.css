@@ -1,79 +1,88 @@
-.column1 {
+.columnTruck1 {
     width: 50px;
     padding-left: 40px;
 
 }
 
-.column2 {
+.columnTruck2 {
     width: 160px
 }
 
-.column3 {
+.columnTruck3 {
     width: 100px;
     text-align: center;
 }
 
-.column4 {
+.columnTruck4 {
     width: 110px;
     text-align: center;
 }
 
-.column5 {
+.columnTruck5 {
     width: 100px;
     text-align: center;
 }
 
-.column6 {
+.columnTruck6 {
     width: 100px;
     text-align: center;
 }
 
 
-.column7 {
+.columnTruck7 {
     width: 100px;
     text-align: center;
 }
-.column8 {
-    width: 100px;
+.columnTruck8 {
+    width: 150px;
     text-align: center;
 }
-.column9 {
-    width: 10px;
+.columnTruck9 {
+    width: 30px;
     text-align: right;
-    padding-right: 62px;
+    padding-right: 51px;
     
 }
 
 
 @media screen and (max-width:992px) {
+
+    table tbody tr .columnTruck2:before {
+        content: "Nom"
+    }
     
-    table tbody tr td:nth-child(3):before {
+    table tbody tr .columnTruck3:before {
         content: "status"
     }
 
-    table tbody tr td:nth-child(4):before {
+    table tbody tr .columnTruck4:before {
         content: "Poids max"
     }
 
-    table tbody tr td:nth-child(5):before {
+    table tbody tr .columnTruck5:before {
         content: "Hauteur"
     }
-    table tbody tr td:nth-child(6):before {
+    table tbody tr .columnTruck6:before {
         content: "Largeur"
     }
-    table tbody tr td:nth-child(7):before {
+    table tbody tr .columnTruck7:before {
         content: "Profondeur"
     }
 
-    .column1,
-    .column2,
-    .column3,
-    .column4,
-    .column5,
-    .column6,
-    .column7,
-    .column8{
+    .columnTruck1,
+    .columnTruck2,
+    .columnTruck3,
+    .columnTruck4,
+    .columnTruck5,
+    .columnTruck6,
+    .columnTruck7,
+    .columnTruck8,
+    .columnTruck9{
         text-align: left
+    }
+
+    .columnTruck8{
+        padding-left: 2rem;
     }
 
 

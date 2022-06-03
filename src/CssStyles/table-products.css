@@ -46,25 +46,25 @@
 @media screen and (max-width:992px) {
     
 
-    table tbody tr td:nth-child(2):before {
+    table tbody tr .columnProduct2:before {
         content: "Nom"
     }
 
-    table tbody tr td:nth-child(3):before {
+    table tbody tr .columnProduct3:before {
         content: "Poids"
     }
 
-    table tbody tr td:nth-child(4):before {
+    table tbody tr .columnProduct4:before {
         content: "Hauteur"
     }
 
-    table tbody tr td:nth-child(5):before {
+    table tbody tr .columnProduct5:before {
         content: "Largeur"
     }
-    table tbody tr td:nth-child(6):before {
+    table tbody tr .columnProduct6:before {
         content: "Profondeur"
     }
-    table tbody tr td:nth-child(7):before {
+    table tbody tr .columnProduct7:before {
         content: "Quanité"
     }
 

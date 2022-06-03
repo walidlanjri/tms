@@ -22,8 +22,13 @@ function App() {
           <Route path="/Login">
             <Login/>
             <Footer/>
-
           </Route>
+
+          <Route path="/SignUp">
+            <SignUp/>
+            <Footer/>
+          </Route>
+          
 
           <Route path="/Home">
             <Body/>
@@ -36,9 +41,7 @@ function App() {
           <Route path="/Trucks">
             <Body/>
           </Route>
-          <Route path="/SignUp">
-            <SignUp/>
-          </Route>
+          
 
           <Route path="/Clients">
             <Body/>
