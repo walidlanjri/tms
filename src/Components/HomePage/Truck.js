@@ -24,7 +24,20 @@ const Truck = () => {
                     <tbody>
                         <tr>
                             <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnTruck2"><Link to="/" >Ahmed walid</Link></td>
+                            <td className="columnTruck12">
+                                <Link to={
+                                    {pathname:"/Details",
+                                    state:{
+                                        Nom:"Ahmed Walid",
+                                        Status:"disponible",
+                                        "Poids maximal":"1000KG",
+                                        Hauteur:10,
+                                        Largeur:10,
+                                        Profondeur:20,
+                                        Matricule:"ABC-200"
+                                    }}
+                                    } >Ahmed Walid</Link>
+                            </td>
                             <td className="columnTruck3">disponible</td>
                             <td className="columnTruck4">1000</td>
                             <td className="columnTruck5">100</td>

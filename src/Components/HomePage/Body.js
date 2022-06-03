@@ -4,6 +4,8 @@ import {Route,Switch} from 'react-router-dom';
 import ProductsList from "./ProductsList";
 import Truck from "./Truck";
 import Clients from "./Clients";
+import DetailsPage from "../DetailsPage";
+
 
 
 
@@ -25,6 +27,9 @@ const Body = () => {
                     </Route>
                     <Route path="/Clients">
                         <Clients/>
+                    </Route>
+                    <Route path="/Details">
+                        <DetailsPage/>
                     </Route>
                 </Switch>
 

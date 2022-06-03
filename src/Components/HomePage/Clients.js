@@ -19,10 +19,24 @@ const Clients = () => {
                     <tbody>
                         <tr>
                             <td className="columnClient1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnClient2"><Link to="/" >iPhone X 64Gb Grey</Link></td>
-                            <td className="columnClient3">520KG</td>
+                            <td className="columnClient2">
+                                <Link to={
+                                    {pathname:"/Details",
+                                    state:{
+                                        Nom:"Ahmed Najii",
+                                        Adresse:"Tanger maroc",
+                                        Email:"naji@gmail.com",
+                                        "Nombre 'achat":10,
+                                        Rang:1,
+                                        LocationX:1001.1,
+                                        LocationY:2001.1
+                                    }}
+                                    } >Ahmed Najii</Link>
+                            </td>
+
+                            <td className="columnClient3">Tanger maroc</td>
                             <td className="columnClient4">10</td>
-                            <td className="columnClient5">10</td>
+                            <td className="columnClient5">1</td>
                             <td className="columnClient6" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
                         </tr>
 

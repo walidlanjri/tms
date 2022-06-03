@@ -51,9 +51,7 @@
     table tbody tr .columnClient5:before {
         content: "Rang"
     }
-    table tbody tr .columnClient5:before {
-        content: none;
-    }
+
 
 
 

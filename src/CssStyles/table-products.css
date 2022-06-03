@@ -1,41 +1,41 @@
 
-.column1 {
+.columnProduct1 {
     width: 50px;
     padding-left: 40px;
 
 }
 
 
-.column2 {
+.columnProduct2 {
     width: 160px
 }
 
-.column3 {
+.columnProduct3 {
     width: 100px;
     text-align: center;
 }
 
-.column4 {
+.columnProduct4 {
     width: 110px;
     text-align: center;
 }
 
-.column5 {
+.columnProduct5 {
     width: 100px;
     text-align: center;
 }
 
-.column6 {
+.columnProduct6 {
     width: 100px;
     text-align: center;
 }
 
-.column7 {
+.columnProduct7 {
     width: 100px;
     text-align: center;
 }
 
-.column8 {
+.columnProduct8 {
     width: 10px;
     text-align: right;
     padding-right: 62px;
@@ -68,14 +68,14 @@
         content: "Quanité"
     }
 
-    .column1,
-    .column2,
-    .column3,
-    .column4,
-    .column5,
-    .column6,
-    .column7,
-    .column8{
+    .columnProduct1,
+    .columnProduct2,
+    .columnProduct3,
+    .columnProduct4,
+    .columnProduct5,
+    .columnProduct6,
+    .columnProduct7,
+    .columnProduct8{
         text-align: left
     }
 

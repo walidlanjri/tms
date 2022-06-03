@@ -47,6 +47,12 @@ function App() {
             <Body/>
           </Route>
 
+          <Route path="/Details">
+            <Body/>
+          </Route>
+
+
+
         </Switch>
 
         

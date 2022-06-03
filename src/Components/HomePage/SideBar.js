@@ -18,9 +18,9 @@ const SideBar = () => {
     
     return ( 
         <div className={isExtended ? "sideBar" : "sideBar-collapsed"}>
-            <Link onClick={handleClick}>
+            <a onClick={handleClick}>
                 <img src="/menu_icons/menu_icon.png" alt="menu icon" className="menuIcon"/>
-            </Link>
+            </a>
 
             <div className={isExtended ? "list" : "shortList"}>
                 <Link to="/Home">

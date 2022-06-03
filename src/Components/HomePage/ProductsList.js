@@ -21,44 +21,25 @@ const ProductsList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnProduct2"><Link to="/" >iPhone X 64Gb Grey</Link></td>
-                            <td className="columnProduct3">520KG</td>
-                            <td className="columnProduct4">10</td>
-                            <td className="columnProduct5">10</td>
-                            <td className="columnProduct6">10</td>
-                            <td className="columnProduct7">10</td>
-                            <td className="columnProduct8" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
-
-                        <tr>
-                            <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnProduct2"><Link to="/" >iPhone X 64Gb Grey</Link></td>
-                            <td className="columnProduct3">520KG</td>
-                            <td className="columnProduct4">10</td>
-                            <td className="columnProduct5">10</td>
-                            <td className="columnProduct6">10</td>
-                            <td className="columnProduct7">10</td>
-                            <td className="columnProduct8" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
+                    
 
 
                         <tr>
                             <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnProduct2"><Link to="/" >iPhone X 64Gb Grey</Link></td>
-                            <td className="columnProduct3">520KG</td>
-                            <td className="columnProduct4">10</td>
-                            <td className="columnProduct5">10</td>
-                            <td className="columnProduct6">10</td>
-                            <td className="columnProduct7">10</td>
-                            <td className="columnProduct8" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
-
-
-                        <tr>
-                            <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnProduct2"><Link to="/" >iPhone X 64Gb Grey</Link></td>
+                            <td className="columnProduct2">
+                                <Link to={
+                                    {pathname:"/Details",
+                                    state:{
+                                        Nom:"iPhone X 64Gb Grey",
+                                        Poids:"520KG",
+                                        Description:"Iphone",
+                                        Longeur:10,
+                                        Largeur:10,
+                                        Profondeur:10,
+                                        "Quanité":10
+                                    }}
+                                    } >iPhone X 64Gb Grey</Link>
+                            </td>
                             <td className="columnProduct3">520KG</td>
                             <td className="columnProduct4">10</td>
                             <td className="columnProduct5">10</td>
