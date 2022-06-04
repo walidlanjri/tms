@@ -1,0 +1,115 @@
+.ContactPage{
+    background-image: url("/public/transport-background.png");
+    height: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contact{
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    height: 25rem;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    justify-content: flex-start;
+    padding: 2rem;
+    padding-left: 4rem;
+    border-radius: 1rem;
+  }
+
+.Contact h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+.Contactform{
+    display: flex;
+    flex-direction: column;
+}
+
+.Contact_detail{
+    margin: 25px auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 90%;
+    height: 40px;}
+
+.Contact_detail input{
+    width: 40%;
+    padding: 15px;
+    font-style: italic;    
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    outline-color: black;
+}
+
+.Contact_detail label[for="firstName"]{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: black;
+}
+
+.Contact_detail label[for="lastName"]{
+    position: absolute;
+    top: -30px;
+    right: 210px;
+    color: black;
+}
+label[for="email_contact"]{
+    color: black;
+    margin-top: 5px;
+    margin-left: 30px ;
+    margin-bottom: 10px;
+        
+} 
+label[for="message"]{
+    color: black;
+    margin-left: 30px ;
+    margin-bottom: 10px;
+} 
+
+.email_detail{
+    width: 40%;
+    margin: 0 0 20px 35px;
+    height: 10px;
+    padding: 15px;
+    font-style: italic;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    outline-color: black;
+
+}
+
+
+
+.message_contact{
+    width: 80%;
+    margin: 0 35px;
+    height: 100px;
+    padding: 5px;
+    font-style: italic;
+    border: 2px solid black;
+    background: transparent;
+    color:black;
+    outline-color: black;
+}
+
+.Contactform button{
+    width: 5rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 35px;
+    margin-top: 10px;
+    border: 1px solid rgb(14, 12, 12);
+    border-radius: 0.4rem;
+  }
+.send button:hover{
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0.5rem;
+  }

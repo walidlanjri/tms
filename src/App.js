@@ -5,6 +5,8 @@ import Login from "./Components/Front pages/Login";
 import Signup from './Components/Front pages/Signup';
 import Body from "./Components/Main pages/Body";
 import NavBar from "./Components/NavBar";
+import Contact from "./Components/Front pages/Contact";
+import About from "./Components/Front pages/About";
 
 function App() {
   return (
@@ -19,11 +21,11 @@ function App() {
             <Footer/>
           </Route>
           
-          <Route path="/se connecter">
+          <Route path="/Login">
             <Login/>
             <Footer/>
           </Route>
-          <Route path="/s'inscrire">
+          <Route path="/Signup">
             <Signup/>
             <Footer/>
           </Route>
@@ -50,7 +52,12 @@ function App() {
           <Route path="/Profile">
             <Body/>
           </Route>
-
+          <Route path="/Contact">
+            <Contact/>
+          </Route>
+          <Route path="/About">
+            <About/>
+          </Route>
 
 
         </Switch>

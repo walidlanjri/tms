@@ -1,0 +1,39 @@
+.aboutPage{
+    background-image: url("/public/transport-background.png");
+    height: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_detail{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 15rem;
+    margin: 0 auto;
+    color: azure;
+    justify-content: flex-start;
+    padding: 2rem;
+    padding-left: 4rem;
+    border-radius: 1rem;
+  }
+.about_detail h3{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color:#db151c;
+}
+
+.about_detail p{
+    text-align: justify;
+    text-justify: inter-word;
+    margin-left: -auto;
+
+}
+.about_detail a{
+    color: #db151c;
+    font-size: medium;
+    font-weight: 200;
+}

@@ -19,6 +19,10 @@ body{
 @import url("./CssStyles/table-client.css");
 @import url("./CssStyles/home.css");
 @import url("./CssStyles/details.css");
+@import url("./CssStyles/signup.css");
+@import url("./CssStyles/login.css");
+@import url("./CssStyles/contact.css");
+@import url("./CssStyles/about.css");
 
 .body{
   display: flex;
