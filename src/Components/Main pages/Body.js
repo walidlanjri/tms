@@ -10,29 +10,30 @@ import DetailsPage from "./DetailsPage";
 
 
 
-const Body = () => {
+const Body = (user) => {
+    
     return ( 
         <div className="body">
             <SideBar/>
             <div className="content">
                 <Switch>
                     <Route exact path="/accueil">
-                        <Home/>
+                        <Home user={user}/>
                     </Route>
                     <Route path="/produits">
-                        <ProductsList/>
+                        <ProductsList user={user}/>
                     </Route>
                     <Route path="/livreurs">
-                        <Truck/>
+                        <Truck user={user}/>
                     </Route>
                     <Route path="/clients">
-                        <Clients/>
+                        <Clients user={user}/>
                     </Route>
                     <Route path="/details">
-                        <DetailsPage/>
+                        <DetailsPage user={user}/>
                     </Route>
                     <Route path="/profile">
-                        <DetailsPage/>
+                        <DetailsPage user={user}/>
                     </Route>
                 </Switch>
 

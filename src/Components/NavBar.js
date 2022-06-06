@@ -5,8 +5,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
-    const [userExist,setIsUser]=useState(false);
-    const [user,setUser] = useState(null);
+    const [userExist, setIsUser] = useState(false);
+    const [user, setUser] = useState(null);
     const [fetched, setFetched] = useState(false)
 
 
@@ -39,10 +39,10 @@ const NavBar = () => {
     }, [userExist, user, fetched]);
 
     const histroy = useHistory();
-    const logout = (e) =>{
+    const logout = (e) => {
         e.preventDefault();
-        localStorage.setItem("token",'');
-        if(localStorage.getItem("token")===''){
+        localStorage.setItem("token", '');
+        if (localStorage.getItem("token") === '') {
             histroy.push("/");
         }
     }
@@ -54,21 +54,21 @@ const NavBar = () => {
             </Link>
             <h1>MyTMS</h1>
             <div className="profileButtons">
-                <Link className="ProfileAnchor" to={
-                    {
-                        pathname: "/profile",
-                        state: {
-                            Type: "Profile",
-                            Image: "",
-                            Nom: "Najii",
-                            Prenom: "Ahmed",
-                            Age: 20,
-                            Adresse: "Tanger maroc",
-                            Email: "naji@gmail.com",
-                            Role: "Admin"
+                {isLoggedIn &&
+                    <Link className="ProfileAnchor" to={
+                        {
+                            pathname: "/profile",
+                            state: {
+                                Type: "Profile",
+                                Image: "",
+                                Nom: user.nom,
+                                Prenom: user.prenom,
+                                Email: user.email,
+                                Role: user.role
+                            }
                         }
-                    }
-                } >Mon profile</Link>
+                    } >Mon profile</Link>
+                }
                 <Link to="/" onClick={logout} className="ProfileAnchor">
                     Se déconnecter
                 </Link>

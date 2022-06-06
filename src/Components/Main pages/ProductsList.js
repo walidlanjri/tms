@@ -11,7 +11,7 @@ const ProductsList = () => {
                         <tr className="table-head">
                             <th className="columnProduct1"></th>
                             <th className="columnProduct2">Nom</th>
-                            <th className="columnProduct3">Poids</th>
+                            <th className="columnProduct3">Poids (KG)</th>
                             <th className="columnProduct4">Hauteur</th>
                             <th className="columnProduct5">Largeur</th>
                             <th className="columnProduct6">Profondeur</th>
@@ -31,7 +31,7 @@ const ProductsList = () => {
                                     {pathname:"/Details",
                                     state:{
                                         Nom:"iPhone X 64Gb Grey",
-                                        Poids:"520KG",
+                                        "Poids (KG)":520,
                                         Description:"Iphone",
                                         Longeur:10,
                                         Largeur:10,
@@ -40,7 +40,7 @@ const ProductsList = () => {
                                     }}
                                     } >iPhone X 64Gb Grey</Link>
                             </td>
-                            <td className="columnProduct3">520KG</td>
+                            <td className="columnProduct3">520</td>
                             <td className="columnProduct4">10</td>
                             <td className="columnProduct5">10</td>
                             <td className="columnProduct6">10</td>

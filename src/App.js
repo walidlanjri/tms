@@ -14,7 +14,6 @@ function App() {
 
     <Router>
 
-
       <div className="app">
 
         <Switch>
@@ -27,7 +26,7 @@ function App() {
 
           <PrivateRoute path={
             ["/accueil", "/produits", "/livreurs", "/clients", "/details", "/profile"]
-          } comp={<Body />}>
+          } comp={<Body/>}>
             <NavBar key="Logged" />
             <Body />
           </PrivateRoute>

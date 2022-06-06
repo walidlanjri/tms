@@ -1,14 +1,13 @@
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
-const DetailsPage = () => {
+const DetailsPage = (user) => {
     const location = useLocation();
     let object = location.state;
     const Type = object.Type;
     if (object.Type==="Profile"){
         const FullName=object.Nom + object.Prenom
         const image = object.Image;
-        object  = (({Nom, Prenom,Age,Adresse,Email,Role}) => ({Nom, Prenom,Age,Adresse,Email,Role}))(object);
-        console.log(object);
+        object  = (({Type,Image,Nom, Prenom,Email,Role}) => ({Type,Image,Nom, Prenom,Email,Role}))(object);
     }
    
 
@@ -17,9 +16,10 @@ const DetailsPage = () => {
     
     return (
         <div className="detailsContainer">
-            <h2>{object.Nom}</h2>
+            {(object.Type==="Profile") ? <h2>{object.Nom+" "+ object.Prenom}</h2> : <h2>{object.Nom}</h2>}
             <div className="details">
                 {Object.keys(object).map((key)=> {
+                    if(key!=="Type")
                         return(
                             <div className="infoField" key={key}>
                                 <span className="infoHeader"> {key}:</span>

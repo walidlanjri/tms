@@ -23,8 +23,8 @@ const PrivateRoute = ({comp: Component,...rest}) => {
         .then((data)=>{
             setFetched(true)
             if(data.user){
-                setUser(data.user);
-                setIsUser(true);;
+                setUser({Type:"Profile",...data.user});
+                setIsUser(true);
             }
             else{
                 setIsUser(false);
