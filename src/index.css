@@ -18,10 +18,10 @@ body{
 @import url("./CssStyles/tables/table-products.css");
 @import url("./CssStyles/tables/table-trucks.css");
 @import url("./CssStyles/tables/table-client.css");
-
 @import url("./CssStyles/home.css");
 @import url("./CssStyles/details.css");
 @import url("./CssStyles/login-signup.css");
+@import url("./CssStyles/addPages.css");
 
 .body{
   display: flex;
@@ -39,61 +39,5 @@ body{
 
 footer .contact a:hover{
   color: black
-}
-
-
-.addItem button{
-  background-color: #007BFF;
-  width: 5.5rem;
-  height: 2.4rem;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 0.9rem;
-  margin-top: 1rem;
-
-}
-.addItem button:hover{
-  background-color: #0761c2;
-  cursor: pointer;
-}
-
-.addItem form{
-  background-color: white;
-  border-radius: 1rem;
-  padding: 1rem;
-  max-width:30rem;
-}
-
-.addItem form .inputs {
-  
-    
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-
-.addItem form label{
-    font-weight: 800;
-    width: 14rem;
-}
-
-.addItem form input{
-
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: 2px solid black;
-
-}
-
-.addItem form select{
-  padding: 0.5rem;
-}
-.addItem form input:focus {
-  outline: none;
-  border: 2px solid #db151c;
 }
 
