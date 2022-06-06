@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const ProductsList = () => {
+    const history = useHistory();
     return ( 
         <div className="tableContainer">
             <h2>List des produits</h2>
-                <button className="addButton">Ajouter</button>
+                <button className="addButton" onClick={(e)=>{
+                    e.preventDefault();
+                    history.push("/ajoutProduit");
+                }}>Ajouter</button>
                 <table className="table">
                     <thead>
                         <tr className="table-head">
                             <th className="columnProduct1"></th>
                             <th className="columnProduct2">Nom</th>
                             <th className="columnProduct3">Poids (KG)</th>
-                            <th className="columnProduct4">Hauteur</th>
-                            <th className="columnProduct5">Largeur</th>
-                            <th className="columnProduct6">Profondeur</th>
+                            <th className="columnProduct4">Hauteur (M)</th>
+                            <th className="columnProduct5">Largeur (M)</th>
+                            <th className="columnProduct6">Profondeur (M)</th>
                             <th className="columnProduct7">Quanité</th>
                             <th className="columnProduct8"></th>
 
@@ -31,11 +36,11 @@ const ProductsList = () => {
                                     {pathname:"/Details",
                                     state:{
                                         Nom:"iPhone X 64Gb Grey",
-                                        "Poids (KG)":520,
                                         Description:"Iphone",
-                                        Longeur:10,
-                                        Largeur:10,
-                                        Profondeur:10,
+                                        "Poids (KG)":520,
+                                        "Longeur (M)":10,
+                                        "Largeur (M)":10,
+                                        "Profondeur (M)":10,
                                         "Quanité":10
                                     }}
                                     } >iPhone X 64Gb Grey</Link>

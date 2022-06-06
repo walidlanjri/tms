@@ -10,15 +10,18 @@ body{
 }
 
 @import url("./CssStyles/navBar.css");
-@import url("./CssStyles/homeBodyLogin.css");
+@import url("./CssStyles/leadingPages.css");
 @import url("./CssStyles/footer.css");
 @import url("./CssStyles/sideBar.css");
-@import url("./CssStyles/table.css");
-@import url("./CssStyles/table-products.css");
-@import url("./CssStyles/table-trucks.css");
-@import url("./CssStyles/table-client.css");
+
+@import url("./CssStyles/tables/table.css");
+@import url("./CssStyles/tables/table-products.css");
+@import url("./CssStyles/tables/table-trucks.css");
+@import url("./CssStyles/tables/table-client.css");
+
 @import url("./CssStyles/home.css");
 @import url("./CssStyles/details.css");
+@import url("./CssStyles/login-signup.css");
 
 .body{
   display: flex;
@@ -38,103 +41,56 @@ footer .contact a:hover{
   color: black
 }
 
-.loginContainer form,.signupContainer form{
-  display: flex;
-  flex-direction: column;
+
+.addProduct button{
+  background-color: #007BFF;
+  width: 5.5rem;
+  height: 2.4rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+
+}
+.addProduct button:hover{
+  background-color: #0761c2;
+  cursor: pointer;
+}
+
+.addProduct form{
   background-color: white;
-  padding: 2.2rem 2rem 0.4rem 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width:30rem;
+}
+
+.addProduct form .inputs {
   
-}
-.loginContainer form{
-  width: 17rem;
-  height: 20rem;
-}
-.signupContainer form{
-  width: 17rem;
-  height: 33rem;
-}
-
-.loginContainer form h3,
-.loginContainer form input,
-.newAccount,
-.signupContainer form h3,
-.signupContainer form input,
-.alreadyExist
-{
- margin-bottom: 0.8rem;
-}
-
-.loginContainer form h3 , .signupContainer form h3{
-  font-size: 1.5rem;
-}
-.loginContainer form label,.signupContainer form label{
-  margin-bottom: 0.3rem;
-}
-#Role{
-  padding: 0.5rem;
+    
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
 }
-#Role :focus-within{
-  outline: none;
-  border: 2px solid #db151c;
-}
-.loginContainer form input ,.signupContainer form input{
-  padding: 0.4rem;
-  border-radius: 0.4rem;
-  border: 2px solid rgb(128, 127, 127);
-}
-.loginContainer form input:focus , .signupContainer form input:focus{
-  outline: none;
-  border: 2px solid #db151c;
-}
 
 
-.loginContainer form button, .signupContainer form button{
-  margin-bottom: 1.2rem;
-  margin-top: 0.6rem;
+.addProduct form label{
+    font-weight: 800;
+    width: 14rem;
+}
+
+.addProduct form input{
+
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  background-color: red;
-  color: white;
-  border: 2px solid red ;
-  font-size: 1.05rem;
+  border: 2px solid black;
 
 }
 
-.loginContainer form button:hover , .signupContainer form button:hover{
-  cursor: pointer;
-  background-color: rgb(174, 1, 1);
-  border-color:  rgb(174, 1, 1);
+.addProduct form input:focus {
+  outline: none;
+  border: 2px solid #db151c;
 }
 
-.alreadyExist a,.newAccount a{
-  margin-right: 2rem;
-  text-decoration: none;
-  color: rgb(81, 80, 80);
-}
-
-.alreadyExist a:hover,.newAccount a:hover{
-  color: black
-}
-
-.created{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  color: white;
-  text-align: center;
-  font-size: 1.1rem;
-  padding: 0.4rem;
-  border-radius: 0.5rem;
-  background-color: rgb(30, 227, 66);
-}
-.exist{
-  color: red;
-}
-
-.notFoundUser{
-  color: red;
-}
-
-.incorrectPass{
-  color: red;
-}

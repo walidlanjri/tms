@@ -1,35 +1,38 @@
-.infoField{
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .infoHeader{
-    display: inline-block;
-    width: 10rem;
-    font-weight: 800;
-  }
-  .infoData{
-    padding-left: 1rem;
-  }
-  
-  .details{
-    background-color: white;
-    border-radius: 1rem;
-    padding: 1rem;
-    max-width:30rem;
-  }
-  .detailsContainer button{
-    background-color: #007BFF;
-    width: 5.5rem;
-    height: 2.4rem;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-  
-  }
-  .detailsContainer button:hover{
-    background-color: #0761c2;
-    cursor: pointer;
-  }
+.infoField {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.infoHeader {
+  display: inline-block;
+  width: 10rem;
+  font-weight: 800;
+}
+
+.infoData {
+  padding-left: 1rem;
+}
+
+.details {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  max-width: 30rem;
+}
+
+.detailsContainer button {
+  background-color: #007BFF;
+  width: 5.5rem;
+  height: 2.4rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+
+}
+
+.detailsContainer button:hover {
+  background-color: #0761c2;
+  cursor: pointer;
+}
