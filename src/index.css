@@ -38,51 +38,58 @@ footer .contact a:hover{
   color: black
 }
 
-.loginContainer,.signupContainer{
+.loginContainer form,.signupContainer form{
   display: flex;
   flex-direction: column;
   background-color: white;
   padding: 2.2rem 2rem 0.4rem 2rem;
   
 }
-.loginContainer{
+.loginContainer form{
   width: 17rem;
   height: 20rem;
 }
-.signupContainer{
+.signupContainer form{
   width: 17rem;
-  height: 25rem;
+  height: 33rem;
 }
 
-.loginContainer h3,
-.loginContainer input,
+.loginContainer form h3,
+.loginContainer form input,
 .newAccount,
-.signupContainer h3,
-.signupContainer input,
+.signupContainer form h3,
+.signupContainer form input,
 .alreadyExist
 {
  margin-bottom: 0.8rem;
 }
 
-.loginContainer h3 , .signupContainer h3{
+.loginContainer form h3 , .signupContainer form h3{
   font-size: 1.5rem;
 }
-.loginContainer label,.signupContainer label{
-  margin-bottom: 0.5rem;
+.loginContainer form label,.signupContainer form label{
+  margin-bottom: 0.3rem;
 }
-
-.loginContainer input ,.signupContainer input{
+#Role{
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+#Role :focus-within{
+  outline: none;
+  border: 2px solid #db151c;
+}
+.loginContainer form input ,.signupContainer form input{
   padding: 0.4rem;
   border-radius: 0.4rem;
   border: 2px solid rgb(128, 127, 127);
 }
-.loginContainer input:focus , .signupContainer input:focus{
+.loginContainer form input:focus , .signupContainer form input:focus{
   outline: none;
   border: 2px solid #db151c;
 }
 
 
-.loginContainer button, .signupContainer button{
+.loginContainer form button, .signupContainer form button{
   margin-bottom: 1.2rem;
   margin-top: 0.6rem;
   padding: 0.5rem 1rem;
@@ -94,7 +101,7 @@ footer .contact a:hover{
 
 }
 
-.loginContainer button:hover , .signupContainer button:hover{
+.loginContainer form button:hover , .signupContainer form button:hover{
   cursor: pointer;
   background-color: rgb(174, 1, 1);
   border-color:  rgb(174, 1, 1);
@@ -108,4 +115,26 @@ footer .contact a:hover{
 
 .alreadyExist a:hover,.newAccount a:hover{
   color: black
+}
+
+.created{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  background-color: rgb(30, 227, 66);
+}
+.exist{
+  color: red;
+}
+
+.notFoundUser{
+  color: red;
+}
+
+.incorrectPass{
+  color: red;
 }

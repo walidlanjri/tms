@@ -1,64 +1,77 @@
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Footer from "./Components/Front pages/Footer";
 import FrontPage from "./Components/Front pages/FrontPage";
 import Login from "./Components/Front pages/Login";
 import Signup from './Components/Front pages/Signup';
 import Body from "./Components/Main pages/Body";
 import NavBar from "./Components/NavBar";
+import PrivateRoute from './Components/Routing/PrivateRoute';
+
 
 function App() {
+  
+
+
   return (
-    
+
     <Router>
-      <NavBar/>
+
+      <NavBar />
       <div className="app">
 
         <Switch>
-          <Route exact path="/">
-            <FrontPage/>
-            <Footer/>
+
+          <Route path="/connecter">
+            <Login />
+            <Footer />
           </Route>
-          
-          <Route path="/se connecter">
-            <Login/>
-            <Footer/>
-          </Route>
+
           <Route path="/s'inscrire">
-            <Signup/>
-            <Footer/>
-          </Route>
-          <Route path="/Home">
-            <Body/>
+            <Signup />
+            <Footer />
           </Route>
 
-          <Route path="/Products">
-            <Body/>
-          </Route>
 
-          <Route path="/Trucks">
-            <Body/>
-          </Route>
-          
+          <PrivateRoute exact path="/" comp={<FrontPage />}>
+            <FrontPage />
+          </PrivateRoute>
 
-          <Route path="/Clients">
-            <Body/>
-          </Route>
+          <PrivateRoute path="/Home" comp={<Body/>}>
+            <Body />
+          </PrivateRoute>
 
-          <Route path="/Details">
-            <Body/>
-          </Route>
-          <Route path="/Profile">
-            <Body/>
-          </Route>
+          <PrivateRoute path="/Products">
+            <Body />
+          </PrivateRoute>
+
+          <PrivateRoute path="/Trucks">
+            <Body />
+          </PrivateRoute>
+
+
+          <PrivateRoute path="/Clients">
+            <Body />
+          </PrivateRoute>
+
+          <PrivateRoute path="/Details">
+            <Body />
+          </PrivateRoute>
+          <PrivateRoute path="/Profile">
+            <Body />
+          </PrivateRoute>
+
+          <PrivateRoute path="/*">
+            <Body />
+          </PrivateRoute>
 
 
 
         </Switch>
 
-        
 
-        
-        
+
+
+
       </div>
     </Router>
   );

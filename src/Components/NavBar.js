@@ -41,10 +41,10 @@ const NavBar = () => {
             </div>
             <div className="loginButtons">
 
-                <Link to="/Login">
+                <Link to="/connecter">
                     <button>Se connecter</button>
                 </Link>
-                <Link to="/Register">
+                <Link to="/s'inscrire">
                     <button>S'inscrire</button>
                 </Link>
             </div>
