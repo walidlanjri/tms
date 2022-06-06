@@ -5,13 +5,13 @@
 
 }
 
-
 .columnProduct2 {
-    width: 160px
+    width: 100px;
+    text-align: center;
 }
 
 .columnProduct3 {
-    width: 100px;
+    width: 160px;
     text-align: center;
 }
 
@@ -36,6 +36,12 @@
 }
 
 .columnProduct8 {
+    width: 100px;
+    text-align: center;
+    
+}
+
+.columnProduct9 {
     width: 10px;
     text-align: right;
     padding-right: 62px;
@@ -47,24 +53,28 @@
     
 
     table tbody tr .columnProduct2:before {
-        content: "Nom"
+        content: "ID"
     }
 
     table tbody tr .columnProduct3:before {
-        content: "Poids"
+        content: "Nom"
     }
 
     table tbody tr .columnProduct4:before {
-        content: "Hauteur"
+        content: "Poids"
     }
 
     table tbody tr .columnProduct5:before {
+        content: "Hauteur"
+    }
+
+    table tbody tr .columnProduct6:before {
         content: "Largeur"
     }
-    table tbody tr .columnProduct6:before {
+    table tbody tr .columnProduct7:before {
         content: "Profondeur"
     }
-    table tbody tr .columnProduct7:before {
+    table tbody tr .columnProduct8:before {
         content: "Quanité"
     }
 

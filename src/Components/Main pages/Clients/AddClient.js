@@ -1,13 +1,18 @@
 import { useState } from "react";
+
 const AddClient = () => {
+
     const [name, setName] = useState('');
     const [adresse, setAdresse] = useState('');
     const [email, setEmail] = useState('');
     const [locationX, setLocationX] = useState('');
     const [locationY, setLocationY] = useState('');
+
+    
     return (
         <div className="addItem">
-            <h2>Ajouter un produit</h2>
+            <h2>Ajouter un client</h2>
+           
             <form >
                 <div className="addCard">
                     <div className="inputs" >
@@ -34,7 +39,8 @@ const AddClient = () => {
                         <input type="number" name="locationX" id="locationX" placeholder="LocationY" value={locationY} onChange={(e => setLocationY(e.target.value))} required />
                     </div>
                 </div>
-                <button>Ajouter</button>
+                
+                <button type="submit">Ajouter</button>
 
             </form>
 

@@ -6,11 +6,7 @@ const Clients = () => {
     return ( 
         <div className="tableContainer">
             <h2>List des clients</h2>
-                <button className="addButton" onClick={(e)=>{
-                    e.preventDefault();
-                    history.push("/ajoutClient")
-
-                }}>Ajouter</button>
+                
                 <table className="table">
                     <thead>
                         <tr className="table-head">

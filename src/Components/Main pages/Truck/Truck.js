@@ -1,16 +1,50 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const Truck = () => {
-    const history=useHistory();
-    return ( 
+    const [isLoading, setIsloading] = useState(true);
+    const [trucksExist, setIsTrucks] = useState(false);
+    const [trucks, setTrucks] = useState(null);
+    const [fetched, setFetched] = useState(false)
+
+    useEffect(() => {
+        fetch("HTTP://localhost:3001/trucks")
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("failed to fetch");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                setFetched(true)
+                if (data.trucks) {
+                    setTrucks(data.trucks);
+                    setIsTrucks(true);
+                }
+                else {
+                    setIsTrucks(false);
+                    setTrucks(null);
+                }
+            });
+    }, []);
+
+    useEffect(() => {
+        if (fetched)
+            setIsloading(false);
+        console.log(trucks);
+    }, [trucksExist, trucks, fetched]);
+
+    const history = useHistory();
+    return (
         <div className="tableContainer">
-                <h2>List des camions</h2>
-                <button className="addButton" onClick={(e)=>{
-                    e.preventDefault();
-                    history.push("/ajoutLivreur");
-                }}>Ajouter</button>
+            <h2>List des camions</h2>
+            <button className="addButton" onClick={(e) => {
+                e.preventDefault();
+                history.push("/ajoutLivreur");
+            }}>Ajouter</button>
+            {isLoading ? <div>Loading</div> :
                 <table className="table">
                     <thead>
                         <tr className="table-head">
@@ -27,73 +61,46 @@ const Truck = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnTruck12">
-                                <Link to={
-                                    {pathname:"/Details",
-                                    state:{
-                                        Nom:"Ahmed Walid",
-                                        Status:"disponible",
-                                        "Poids maximal":"1000KG",
-                                        Hauteur:10,
-                                        Largeur:10,
-                                        Profondeur:20,
-                                        Matricule:"ABC-200"
-                                    }}
-                                    } >Ahmed Walid</Link>
-                            </td>
-                            <td className="columnTruck3">disponible</td>
-                            <td className="columnTruck4">1000</td>
-                            <td className="columnTruck5">100</td>
-                            <td className="columnTruck6">100</td>
-                            <td className="columnTruck7">100</td>
-                            <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                            <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
+                        {
+                            trucks.map((truck) => {
+                                console.log(truck);
+                                return (
+                                    <tr>
+                                        <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnTruck2">
+                                            <Link to={
+                                                {
+                                                    pathname: "/Details",
+                                                    state: {
+                                                        Nom: truck.name,
+                                                        Status: truck.state,
+                                                        "Poids maximal": truck.maxWeight,
+                                                        Hauteur: truck.length,
+                                                        Largeur: truck.width,
+                                                        Profondeur: truck.depth,
+                                                        Matricule: truck.plate
+                                                    }
+                                                }
+                                            } >{truck.name}</Link>
+                                        </td>
+                                        <td className="columnTruck3">{truck.state}</td>
+                                        <td className="columnTruck4">{truck.maxWeight}</td>
+                                        <td className="columnTruck5">{truck.width}</td>
+                                        <td className="columnTruck6">{truck.length}</td>
+                                        <td className="columnTruck7">{truck.depth}</td>
+                                        <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
+                                        <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
 
-                        <tr>
-                            <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnTruck2"><Link to="/" >Ahmed walid</Link></td>
-                            <td className="columnTruck3">disponible</td>
-                            <td className="columnTruck4">1000</td>
-                            <td className="columnTruck5">100</td>
-                            <td className="columnTruck6">100</td>
-                            <td className="columnTruck7">100</td>
-                            <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                            <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
-
-
-                        <tr>
-                            <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnTruck2"><Link to="/" >Ahmed walid</Link></td>
-                            <td className="columnTruck3">disponible</td>
-                            <td className="columnTruck4">1000</td>
-                            <td className="columnTruck5">100</td>
-                            <td className="columnTruck6">100</td>
-                            <td className="columnTruck7">100</td>
-                            <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                            <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
-
-                        <tr>
-                            <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnTruck2"><Link to="/" >Ahmed walid</Link></td>
-                            <td className="columnTruck3">disponible</td>
-                            <td className="columnTruck4">1000</td>
-                            <td className="columnTruck5">100</td>
-                            <td className="columnTruck6">100</td>
-                            <td className="columnTruck7">100</td>
-                            <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                            <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                        </tr>
-
-                    
+                                    </tr>
+                                )
+                            })
+                        }
+                       
                     </tbody>
                 </table>
-        </div>
-     );
+            }
+        </div >
+    );
 }
- 
+
 export default Truck;

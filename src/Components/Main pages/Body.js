@@ -31,20 +31,24 @@ const Body = (user) => {
                         <AddProduct user={user}/>
                     </Route>
 
+                    <Route path="/livreurs">
+                        <Truck user={user}/>
+                    </Route>
+
                     <Route path="/ajoutLivreur">
                         <AddTruck user={user}/>
                     </Route>
 
+                    <Route path="/clients">
+                        <Clients user={user}/>
+                    </Route>
+                    
                     <Route path="/ajoutClient">
                         <AddClient user={user}/>
                     </Route>
 
-                    <Route path="/livreurs">
-                        <Truck user={user}/>
-                    </Route>
-                    <Route path="/clients">
-                        <Clients user={user}/>
-                    </Route>
+                    
+                    
                     <Route path="/details">
                         <DetailsPage user={user}/>
                     </Route>
