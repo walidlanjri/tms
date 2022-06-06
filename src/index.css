@@ -42,7 +42,7 @@ footer .contact a:hover{
 }
 
 
-.addProduct button{
+.addItem button{
   background-color: #007BFF;
   width: 5.5rem;
   height: 2.4rem;
@@ -53,19 +53,19 @@ footer .contact a:hover{
   margin-top: 1rem;
 
 }
-.addProduct button:hover{
+.addItem button:hover{
   background-color: #0761c2;
   cursor: pointer;
 }
 
-.addProduct form{
+.addItem form{
   background-color: white;
   border-radius: 1rem;
   padding: 1rem;
   max-width:30rem;
 }
 
-.addProduct form .inputs {
+.addItem form .inputs {
   
     
   display: flex;
@@ -76,12 +76,12 @@ footer .contact a:hover{
 }
 
 
-.addProduct form label{
+.addItem form label{
     font-weight: 800;
     width: 14rem;
 }
 
-.addProduct form input{
+.addItem form input{
 
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -89,7 +89,10 @@ footer .contact a:hover{
 
 }
 
-.addProduct form input:focus {
+.addItem form select{
+  padding: 0.5rem;
+}
+.addItem form input:focus {
   outline: none;
   border: 2px solid #db151c;
 }

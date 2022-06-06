@@ -1,14 +1,13 @@
 import { useState } from "react";
 
-
-const AddProduct = () => {
+const AddTruck = () => {
     const [name, setName] = useState('');
-    const [desc, setDesc] = useState('');
-    const [weight, setWeight] = useState('');
+    const [state, setState] = useState('');
+    const [maxWeight, setMaxWeight] = useState('');
     const [length, setLength] = useState('');
     const [width, setWidth] = useState('');
     const [depth, setDepth] = useState('');
-    const [qte, setQte] = useState('');
+    const [plate, setPlate] = useState('');
 
     return (
         <div className="addItem">
@@ -20,13 +19,17 @@ const AddProduct = () => {
                 </div>
 
                 <div className="inputs" >
-                    <label htmlFor="desc">Description:</label>
-                    <input type="text" name="desc" id="desc" placeholder="Description" value={desc} onChange={(e => setDesc(e.target.value))} />
+                    <label htmlFor="state">Status:</label>
+                    <select id="state" name="state" default="Indisponible" value={state} onChange={(e => setState(e.target.value))} required>
+                        <option value="">--Chosir un état--</option>
+                        <option value="Disponible">Disponible</option>
+                        <option value="Indisponible">Indisponible</option>
+                    </select>
                 </div>
 
                 <div className="inputs" >
-                    <label htmlFor="poids">Poids (KG):</label>
-                    <input type="number" name="poids" id="poids" min={1} placeholder="Poids" value={weight} onChange={(e => setWeight(e.target.value))} required />
+                    <label htmlFor="poids-max">Poids maximal (KG):</label>
+                    <input type="number" name="poids-max" id="poids-max" min={1} placeholder="Poids maximal" value={maxWeight} onChange={(e => setMaxWeight(e.target.value))} required />
                 </div>
 
                 <div className="inputs" >
@@ -44,15 +47,15 @@ const AddProduct = () => {
                     <input type="number" name="profondeur" id="profondeur" min={1} placeholder="profondeur" value={depth} onChange={(e => setDepth(e.target.value))} required />
                 </div>
                 <div className="inputs" >
-                    <label htmlFor="quanite">Quanité:</label>
-                    <input type="number" name="quanite" id="quanite" min={1} placeholder="Quanité" value={qte} onChange={(e => setQte(e.target.value))} required />
+                    <label htmlFor="plate">Matricule:</label>
+                    <input type="text" name="plate" id="plate" min={1} placeholder="Matricule" value={plate} onChange={(e => setPlate(e.target.value))} required />
                 </div>
 
-                
+
             </form>
             <button>Ajouter</button>
         </div>
     );
 }
 
-export default AddProduct;
+export default AddTruck;

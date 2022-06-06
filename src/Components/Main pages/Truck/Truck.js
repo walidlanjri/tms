@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const Truck = () => {
+    const history=useHistory();
     return ( 
         <div className="tableContainer">
                 <h2>List des camions</h2>
-                <button className="addButton">Ajouter</button>
+                <button className="addButton" onClick={(e)=>{
+                    e.preventDefault();
+                    history.push("/ajoutLivreur");
+                }}>Ajouter</button>
                 <table className="table">
                     <thead>
                         <tr className="table-head">
