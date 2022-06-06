@@ -23,23 +23,23 @@ const SideBar = () => {
             </a>
 
             <div className={isExtended ? "list" : "shortList"}>
-                <Link to="/Home">
+                <Link to="/accueil">
                     <i className="fa-solid fa-house fa-lg"></i>
                     <span >Accueil</span>
                 </Link>
 
 
-                <Link to="/Products">
+                <Link to="/produits">
                     <i className="fa-solid fa-box fa-lg"></i>
                     <span >Produits</span>
                 </Link>
 
-                <Link to="/Trucks">
+                <Link to="/livreurs">
                     <i className="fa-solid fa-truck fa-lg"></i>
                     <span>Livreurs</span>
                 </Link>
 
-                <Link to="/Clients">
+                <Link to="/clients">
                     <i className="fa-solid fa-user fa-lg"></i>
                     <span>Clients</span>
                 </Link>

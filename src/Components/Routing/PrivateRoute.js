@@ -40,7 +40,7 @@ const PrivateRoute = ({comp: Component,...rest}) => {
     
     //if user exist
     return(
-        !isLoading && (userExist ? <Route {...rest} render={props =>(<Component user={user} {...props} />)}/> :<Redirect to='/connecter'/>))//(!isLoading && !userExist && user===null && console.log(isLoading,userExist,user))//<Redirect to='/connecter'/>)))
+        !isLoading && (userExist ? <Route {...rest} render={props =>(<Component user={user} {...props} />)}/> :<Redirect to='/connecter'/>))
 }
 
 export default PrivateRoute;

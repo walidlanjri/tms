@@ -16,22 +16,22 @@ const Body = () => {
             <SideBar/>
             <div className="content">
                 <Switch>
-                    <Route exact path="/Home">
+                    <Route exact path="/accueil">
                         <Home/>
                     </Route>
-                    <Route path="/Products">
+                    <Route path="/produits">
                         <ProductsList/>
                     </Route>
-                    <Route path="/Trucks">
+                    <Route path="/livreurs">
                         <Truck/>
                     </Route>
-                    <Route path="/Clients">
+                    <Route path="/clients">
                         <Clients/>
                     </Route>
-                    <Route path="/Details">
+                    <Route path="/details">
                         <DetailsPage/>
                     </Route>
-                    <Route path="/Profile">
+                    <Route path="/profile">
                         <DetailsPage/>
                     </Route>
                 </Switch>
