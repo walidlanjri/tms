@@ -2,21 +2,23 @@
 .columnClient1 {
     width: 30px;
     padding-left: 40px;
+    
 
 }
 
 .columnClient2 {
-    width: 150px
+    width: 100px;
+    text-align: left;
 }
 
 .columnClient3 {
-    width: 100px;
-    text-align: center;
+    width: 150px;
+    text-align: left;
 }
 
 .columnClient4 {
     width: 110px;
-    text-align: center;
+    text-align: left;
 }
 
 .columnClient5 {
@@ -28,6 +30,8 @@
     width: 100px;
     text-align: center;
 }
+
+
 
 
 
@@ -45,10 +49,14 @@
     }
 
     table tbody tr .columnClient4::before {
-        content: "Nombre d'achat"
+        content: "Email"
     }
 
     table tbody tr .columnClient5:before {
+        content: "Nombre d'achat"
+    }
+
+    table tbody tr .columnClient6:before {
         content: "Rang"
     }
 

@@ -20,7 +20,6 @@ const ProductsList = () => {
             })
             .then((data) => {
                 setFetched(true);
-                console.log(data);
                 if (data.products) {
                     setProducts(data.products);
 
@@ -118,11 +117,6 @@ const ProductsList = () => {
                                 )
                             })
                         }
-
-                        
-
-
-
 
                     </tbody>
                 </table>

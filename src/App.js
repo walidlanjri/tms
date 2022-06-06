@@ -19,13 +19,15 @@ function App() {
         <Switch>
 
           <Route exact path={["/","/connecter","/s'inscrire"]}>
+
             <NavBar key="notLogged" />
               <LeadingPages/>
             <Footer />
+
           </Route>
 
           <PrivateRoute path={
-            ["/accueil", "/produits", "/livreurs", "/clients", "/details", "/profile","/ajoutProduit","/ajoutLivreur","/ajoutClient"]
+            ["/accueil", "/produits", "/livreurs", "/clients","/clients/:id", "/details", "/profile","/ajoutProduit","/ajoutLivreur","/ajoutClient"]
           } comp={<Body/>}>
             <NavBar key="Logged" />
             <Body />
