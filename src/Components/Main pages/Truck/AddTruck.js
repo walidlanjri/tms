@@ -40,7 +40,6 @@ const AddTruck = () => {
             return res.json();
         })
         .then((data)=>{
-            console.log(data);
             if(data.created){
                 setIsAdded(true);
                 history.push("/livreurs")

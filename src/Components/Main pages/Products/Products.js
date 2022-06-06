@@ -1,8 +1,60 @@
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useEffect, useState } from "react";
 
 
 const ProductsList = () => {
+    const [isLoading, setIsloading] = useState(true);
+    const [products, setProducts] = useState(null);
+    const [fetched, setFetched] = useState(false);
+
+    const [isDeleted, setIsDeleted] = useState(false);
+
+    useEffect(() => {
+        fetch("HTTP://localhost:3001/products")
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("failed to fetch");
+                }
+                return res.json();
+            })
+            .then((data) => {
+                setFetched(true);
+                console.log(data);
+                if (data.products) {
+                    setProducts(data.products);
+
+                }
+                else {
+                    setProducts(null);
+                }
+            });
+    }, [isDeleted]);
+
+    useEffect(() => {
+        if (fetched)
+            setIsloading(false);
+    }, [products, fetched]);
+
+
+    const handleDelete = (id) =>{
+
+        fetch(`HTTP://localhost:3001/deleteProduct/${id}`,{method:"DELETE"})
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("failed to fetch");
+                }
+                return res.json();
+            })
+            .then((data)=>{
+                if(data.deleted){
+                    setIsDeleted(true);
+                }
+            });
+            
+    }
+
+
     const history = useHistory();
     return (
         <div className="tableContainer">
@@ -11,60 +63,70 @@ const ProductsList = () => {
                 e.preventDefault();
                 history.push("/ajoutProduit");
             }}>Ajouter</button>
-            <table className="table">
-                <thead>
-                    <tr className="table-head">
-                        <th className="columnProduct1"></th>
-                        <th className="columnProduct2">ID</th>
-                        <th className="columnProduct3">Nom</th>
-                        <th className="columnProduct4">Poids (KG)</th>
-                        <th className="columnProduct5">Hauteur (M)</th>
-                        <th className="columnProduct6">Largeur (M)</th>
-                        <th className="columnProduct7">Profondeur (M)</th>
-                        <th className="columnProduct8">Quanité</th>
-                        <th className="columnProduct9"></th>
+            {isLoading ? <div>Loading</div> :
 
-                    </tr>
-                </thead>
-                <tbody>
+                <table className="table">
+                    <thead>
+                        <tr className="table-head">
+                            <th className="columnProduct1"></th>
+                            <th className="columnProduct2">ID</th>
+                            <th className="columnProduct3">Nom</th>
+                            <th className="columnProduct4">Poids (KG)</th>
+                            <th className="columnProduct5">Hauteur (M)</th>
+                            <th className="columnProduct6">Largeur (M)</th>
+                            <th className="columnProduct7">Profondeur (M)</th>
+                            <th className="columnProduct8">Quanité</th>
+                            <th className="columnProduct9"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            products.map((product) => {
+                                return (
+                                    <tr key={product._id}>
+                                        <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnProduct2">
+                                            <Link to={
+                                                {
+                                                    pathname: "/Details",
+                                                    state: {
+                                                        ID: product.id,
+                                                        Nom: product.name,
+                                                        Description: product.desc,
+                                                        "Poids (KG)": product.weight,
+                                                        "Longeur (M)": product.length,
+                                                        "Largeur (M)": product.width,
+                                                        "Profondeur (M)": product.depth,
+                                                        "Quanité": product.qte,
+                                                    }
+                                                }
+                                            } >{product.id}</Link>
+                                        </td>
+                                 
+                                        <td className="columnProduct3">{product.name}</td>
+                                        <td className="columnProduct4">{product.weight}</td>
+                                        <td className="columnProduct5">{product.length}</td>
+                                        <td className="columnProduct6">{product.width}</td>
+                                        <td className="columnProduct7">{product.depth}</td>
+                                        <td className="columnProduct8">{product.qte}</td>
+                                        <td className="columnProduct9" ><Link to="/produits" onClick={() => { handleDelete(product._id) }} ><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
+                                    
+
+                                    </tr>
+                                )
+                            })
+                        }
+
+                        
 
 
 
-                    <tr>
-                        <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                        <td className="columnProduct2">
-                            <Link to={
-                                {
-                                    pathname: "/Details",
-                                    state: {
-                                        ID: "IX-1002",
-                                        Nom: "iPhone X 64Gb Grey",
-                                        Description: "Iphone",
-                                        "Poids (KG)": 520,
-                                        "Longeur (M)": 10,
-                                        "Largeur (M)": 10,
-                                        "Profondeur (M)": 10,
-                                        "Quanité": 10
-                                    }
-                                }
-                            } >IX-1002</Link>
-                            
-                        </td>
-                        <td className="columnProduct3">iPhone X 64Gb Grey</td>
-                        <td className="columnProduct4">520</td>
-                        <td className="columnProduct5">10</td>
-                        <td className="columnProduct6">10</td>
-                        <td className="columnProduct7">10</td>
-                        <td className="columnProduct8">10</td>
-                        <td className="columnProduct9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
-                    </tr>
 
-
-
-
-
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            }
         </div>
     );
 }

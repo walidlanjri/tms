@@ -7,7 +7,9 @@ const Truck = () => {
     const [isLoading, setIsloading] = useState(true);
     const [trucksExist, setIsTrucks] = useState(false);
     const [trucks, setTrucks] = useState(null);
-    const [fetched, setFetched] = useState(false)
+    const [fetched, setFetched] = useState(false);
+
+    const [isDeleted,setIsDeleted]=useState(false);
 
     useEffect(() => {
         fetch("HTTP://localhost:3001/trucks")
@@ -21,20 +23,36 @@ const Truck = () => {
                 setFetched(true)
                 if (data.trucks) {
                     setTrucks(data.trucks);
-                    setIsTrucks(true);
+
                 }
                 else {
-                    setIsTrucks(false);
                     setTrucks(null);
                 }
             });
-    }, []);
+    }, [isDeleted]);
 
     useEffect(() => {
         if (fetched)
             setIsloading(false);
-        console.log(trucks);
-    }, [trucksExist, trucks, fetched]);
+    }, [trucks, fetched]);
+
+
+    const handleDelete = (id) =>{
+
+        fetch(`HTTP://localhost:3001/deleteTruck/${id}`,{method:"DELETE"})
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("failed to fetch");
+                }
+                return res.json();
+            })
+            .then((data)=>{
+                if(data.deleted){
+                    setIsDeleted(true);
+                }
+            });
+            
+    }
 
     const history = useHistory();
     return (
@@ -63,9 +81,8 @@ const Truck = () => {
                     <tbody>
                         {
                             trucks.map((truck) => {
-                                console.log(truck);
                                 return (
-                                    <tr>
+                                    <tr key={truck._id}>
                                         <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnTruck2">
                                             <Link to={
@@ -89,7 +106,7 @@ const Truck = () => {
                                         <td className="columnTruck6">{truck.length}</td>
                                         <td className="columnTruck7">{truck.depth}</td>
                                         <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                                        <td className="columnTruck9" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
+                                        <td className="columnTruck9" ><Link to="/livreurs" onClick={()=>{handleDelete(truck._id)}}><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
 
                                     </tr>
                                 )

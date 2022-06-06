@@ -40,7 +40,7 @@ const Clients = () => {
                             <td className="columnClient3">Tanger maroc</td>
                             <td className="columnClient4">10</td>
                             <td className="columnClient5">1</td>
-                            <td className="columnClient6" ><Link to="/"><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
+
                         </tr>
 
                        
