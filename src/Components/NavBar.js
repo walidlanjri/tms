@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
@@ -37,10 +38,18 @@ const NavBar = () => {
             setLoggedIn(true);
     }, [userExist, user, fetched]);
 
+    const histroy = useHistory();
+    const logout = (e) =>{
+        e.preventDefault();
+        localStorage.setItem("token",'');
+        if(localStorage.getItem("token")===''){
+            histroy.push("/");
+        }
+    }
     return (
 
         <div className={isLoggedIn ? "navBarLogged" : "navBar"}>
-            <Link to="/accueil">
+            <Link to={isLoggedIn ? "accueil" : "/"}>
                 <img src="transport64.png" alt="logo" />
             </Link>
             <h1>MyTMS</h1>
@@ -60,8 +69,7 @@ const NavBar = () => {
                         }
                     }
                 } >Mon profile</Link>
-
-                <Link to="/" className="ProfileAnchor">
+                <Link to="/" onClick={logout} className="ProfileAnchor">
                     Se déconnecter
                 </Link>
             </div>
