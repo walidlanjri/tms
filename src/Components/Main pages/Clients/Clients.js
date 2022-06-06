@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 const Clients = () => {
+    const history=useHistory();
     return ( 
         <div className="tableContainer">
             <h2>List des clients</h2>
-                <button className="addButton">Ajouter</button>
+                <button className="addButton" onClick={(e)=>{
+                    e.preventDefault();
+                    history.push("/ajoutClient")
+
+                }}>Ajouter</button>
                 <table className="table">
                     <thead>
                         <tr className="table-head">
@@ -26,7 +33,7 @@ const Clients = () => {
                                         Nom:"Ahmed Najii",
                                         Adresse:"Tanger maroc",
                                         Email:"naji@gmail.com",
-                                        "Nombre 'achat":10,
+                                        "Nombre d'achat":10,
                                         Rang:1,
                                         LocationX:1001.1,
                                         LocationY:2001.1

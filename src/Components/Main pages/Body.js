@@ -7,6 +7,7 @@ import Clients from "./Clients/Clients";
 import DetailsPage from "./DetailsPage";
 import AddProduct from "./Products/AddProduct";
 import AddTruck from "./Truck/AddTruck";
+import AddClient from "./Clients/AddClient";
 
 
 
@@ -34,7 +35,10 @@ const Body = (user) => {
                         <AddTruck user={user}/>
                     </Route>
 
-                    
+                    <Route path="/ajoutClient">
+                        <AddClient user={user}/>
+                    </Route>
+
                     <Route path="/livreurs">
                         <Truck user={user}/>
                     </Route>

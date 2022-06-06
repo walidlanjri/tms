@@ -25,7 +25,7 @@ function App() {
           </Route>
 
           <PrivateRoute path={
-            ["/accueil", "/produits", "/livreurs", "/clients", "/details", "/profile","/ajoutProduit","/ajoutLivreur"]
+            ["/accueil", "/produits", "/livreurs", "/clients", "/details", "/profile","/ajoutProduit","/ajoutLivreur","/ajoutClient"]
           } comp={<Body/>}>
             <NavBar key="Logged" />
             <Body />
