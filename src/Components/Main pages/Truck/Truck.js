@@ -87,7 +87,7 @@ const Truck = () => {
                                         <td className="columnTruck2">
                                             <Link to={
                                                 {
-                                                    pathname: "/Details",
+                                                    pathname: "/livreur/"+truck._id,
                                                     state: {
                                                         Nom: truck.name,
                                                         Status: truck.state,

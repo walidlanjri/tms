@@ -1,14 +1,23 @@
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useLocation, useParams } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const DetailsPage = (user) => {
     const location = useLocation();
     let object = location.state;
-    const Type = object.Type;
-    if (object.Type==="Profile"){
-        const FullName=object.Nom + object.Prenom
-        const image = object.Image;
-        object  = (({Type,Image,Nom, Prenom,Email,Role}) => ({Type,Image,Nom, Prenom,Email,Role}))(object);
+
+    const parm = useParams();
+    if(object){
+        if (object.Type==="Profile"){
+            const FullName=object.Nom + object.Prenom
+            const image = object.Image;
+            object  = (({Type,Image,Nom, Prenom,Email,Role}) => ({Type,Image,Nom, Prenom,Email,Role}))(object);
+        }
     }
+
+    else{
+        
+    }
+    
    
 
 

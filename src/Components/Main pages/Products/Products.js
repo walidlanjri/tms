@@ -89,7 +89,7 @@ const ProductsList = () => {
                                         <td className="columnProduct2">
                                             <Link to={
                                                 {
-                                                    pathname: "/Details",
+                                                    pathname: "/produit/"+product._id,
                                                     state: {
                                                         ID: product.id,
                                                         Nom: product.name,

@@ -34,8 +34,10 @@ const NavBar = () => {
     }, []);
 
     useEffect(() => {
-        if (fetched && userExist)
+        if (fetched && userExist){
             setLoggedIn(true);
+        }
+            
     }, [userExist, user, fetched]);
 
     const histroy = useHistory();
@@ -50,7 +52,7 @@ const NavBar = () => {
 
         <div className={isLoggedIn ? "navBarLogged" : "navBar"}>
             <Link to={isLoggedIn ? "accueil" : "/"}>
-                <img src="transport64.png" alt="logo" />
+                <img src="/transport64.png" alt="logo" />
             </Link>
             <h1>MyTMS</h1>
             <div className="profileButtons">

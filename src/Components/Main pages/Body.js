@@ -8,13 +8,18 @@ import DetailsPage from "./DetailsPage";
 import AddProduct from "./Products/AddProduct";
 import AddTruck from "./Truck/AddTruck";
 import AddClient from "./Clients/AddClient";
+import DetailsTruck from "./Truck/DetailsTruck";
+import DetailsProduct from "./Products/DetailsProduct";
+import DetailsClient from "./Clients/DetailsClient";
+import Profile from "./Profile";
+
 
 
 
 
 
 const Body = (user) => {
-    
+    console.log("user",user);
     return ( 
         <div className="body">
             <SideBar/>
@@ -27,12 +32,20 @@ const Body = (user) => {
                         <ProductsList user={user}/>
                     </Route>
 
+                    <Route path="/produit/:id">
+                        <DetailsProduct user={user}/>
+                    </Route>
+
                     <Route path="/ajoutProduit">
                         <AddProduct user={user}/>
                     </Route>
 
                     <Route path="/livreurs">
                         <Truck user={user}/>
+                    </Route>
+
+                    <Route  path="/livreur/:id" >
+                        <DetailsTruck user={user}/>
                     </Route>
 
                     <Route path="/ajoutLivreur">
@@ -42,16 +55,15 @@ const Body = (user) => {
                     <Route path="/clients">
                         <Clients user={user}/>
                     </Route>
+                    <Route path="/client/:id">
+                        <DetailsClient user={user}/>
+                    </Route>
                     
                     <Route path="/ajoutClient">
                         <AddClient user={user}/>
                     </Route>
 
-                    
-                    
-                    <Route path="/details">
-                        <DetailsPage user={user}/>
-                    </Route>
+            
                     <Route path="/profile">
                         <DetailsPage user={user}/>
                     </Route>

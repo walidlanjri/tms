@@ -8,7 +8,7 @@ const PrivateRoute = ({comp: Component,...rest}) => {
     const [isLoading,setIsloading]=useState(true);
     const [userExist,setIsUser]=useState(false);
     const [user,setUser] = useState(null);
-    const [fetched, setFetched] = useState(false)
+    const [fetched, setFetched] = useState(false);
 
     useEffect(()=>{
         fetch("HTTP://localhost:3001/user",{
@@ -36,6 +36,7 @@ const PrivateRoute = ({comp: Component,...rest}) => {
     useEffect(()=>{
         if(fetched)
             setIsloading(false);
+            console.log(user);
     },[userExist,user,fetched]);
     
     //if user exist

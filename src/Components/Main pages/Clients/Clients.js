@@ -60,7 +60,7 @@ const Clients = () => {
                                         <td className="columnClient2">
                                             <Link to={
                                                 {
-                                                    pathname: "/client/"+client.nom,
+                                                    pathname: "/client/"+client._id,
                                                     state: {
                                                         Nom: client.nom,
                                                         Adresse: client.adresse,
@@ -71,7 +71,7 @@ const Clients = () => {
                                                         LocationY: client.locationY
                                                     }
                                                 }
-                                            } >{client.nom}</Link>
+                                            } >{client.nom +" " +client.prenom}</Link>
                                         </td>
 
                                         <td className="columnClient3">{client.adresse}</td>
@@ -83,31 +83,7 @@ const Clients = () => {
                             })
                         }
 
-                        <tr>
-                            <td className="columnClient1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
-                            <td className="columnClient2">
-                                <Link to={
-                                    {
-                                        pathname: "/Details",
-                                        state: {
-                                            Nom: "Ahmed Najii",
-                                            Adresse: "Tanger maroc",
-                                            Email: "naji@gmail.com",
-                                            "Nombre d'achat": 10,
-                                            Rang: 1,
-                                            LocationX: 1001.1,
-                                            LocationY: 2001.1
-                                        }
-                                    }
-                                } >Ahmed Najii</Link>
-                            </td>
-
-                            <td className="columnClient3">Tanger maroc</td>
-                            <td className="columnClient4">maillll@lll.com</td>
-                            <td className="columnClient5">10</td>
-                            <td className="columnClient6">1</td>
-
-                        </tr>
+                    
 
 
 
