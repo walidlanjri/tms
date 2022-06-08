@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const DetailsClient = () => {
+    const history = useHistory();
     const parm = useParams();
     const id = parm.id;
     const [isLoading, setIsloading] = useState(true);
@@ -37,6 +39,10 @@ const DetailsClient = () => {
             setIsloading(false);
     }, [clientExist, client, fetched]);
 
+    const modifyClient = (id)=>{
+        history.push(`/modifierClient/${id}`);
+
+    }
     return (
         isLoading ? <h3>Loading</h3> :
             <div className="detailsContainer">
@@ -77,7 +83,7 @@ const DetailsClient = () => {
 
                         </div>
 
-                        <button>Modifier</button>
+                        <button onClick={()=>{modifyClient(client._id)}}>Modifier</button>
                     </div>
                 }
             </div>

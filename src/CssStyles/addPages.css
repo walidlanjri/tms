@@ -44,7 +44,10 @@
     border: 2px solid black;
   
   }
-  
+  .addItem form .image{
+    padding: 0.5rem 1rem;
+    border: none;
+  }
   .addItem form select{
     padding: 0.5rem;
   }

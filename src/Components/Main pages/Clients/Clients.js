@@ -56,7 +56,7 @@ const Clients = () => {
                             clients.map((client) => {
                                 return (
                                     <tr key={client._id}>
-                                        <td className="columnClient1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnClient1"><Link to={"/modifierClient/"+client._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnClient2">
                                             <Link to={
                                                 {
