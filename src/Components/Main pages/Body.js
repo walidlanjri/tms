@@ -7,12 +7,12 @@ import Clients from "./Clients/Clients";
 import DetailsPage from "./DetailsPage";
 import AddProduct from "./Products/AddProduct";
 import AddTruck from "./Truck/AddTruck";
-import AddClient from "./Clients/AddClient";
 import DetailsTruck from "./Truck/DetailsTruck";
 import DetailsProduct from "./Products/DetailsProduct";
 import DetailsClient from "./Clients/DetailsClient";
 import Profile from "./Profile";
 import ModifyClient from "./Clients/ModifyClient";
+import ModifyProduct from "./Products/ModifyProduct";
 
 
 
@@ -38,10 +38,14 @@ const Body = (user) => {
                         <DetailsProduct user={user}/>
                     </Route>
 
+                    <Route path="/modifierProduit/:id">
+                        <ModifyProduct user={user}/>
+                    </Route>
+
                     <Route path="/ajoutProduit">
                         <AddProduct user={user}/>
                     </Route>
-
+                    
                     <Route path="/livreurs">
                         <Truck user={user}/>
                     </Route>
@@ -66,9 +70,6 @@ const Body = (user) => {
                         <ModifyClient user={user}/>
                     </Route>
                     
-                    <Route path="/ajoutClient">
-                        <AddClient user={user}/>
-                    </Route>
 
             
                     <Route path="/profile">

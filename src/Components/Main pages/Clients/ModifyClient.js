@@ -62,7 +62,7 @@ const ModifyClient = () => {
     const modifyClient = (e) => {
         e.preventDefault();
 
-        fetch(`HTTP://localhost:3001/modifierClient/${client._id}`, {
+        fetch(`HTTP://localhost:3001/modifyClient/${client._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const ModifyClient = () => {
                 return res.json();
             })
             .then((data) => {
-                console.log(data);
+             
                 if (data.status) {
                     setIsModifed(true);
                     history.push(`/client/${client._id}`);

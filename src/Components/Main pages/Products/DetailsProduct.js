@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 const DetailsProduct = () => {
     const parm = useParams();
     const id = parm.id;
@@ -31,12 +31,15 @@ const DetailsProduct = () => {
                 }
             });
     }, []);
-
+    const history = useHistory();
     useEffect(() => {
         if (fetched)
             setIsloading(false);
     }, [productExist, product, fetched]);
+    const modifyClient=(id)=>{
+        history.push(`/modifyProduit/${id}`);
 
+    }
     return (
         isLoading ? <h3>Loading</h3> :
             <div className="detailsContainer">
@@ -88,7 +91,7 @@ const DetailsProduct = () => {
 
                         </div>
 
-                        <button>Modifier</button>
+                        <button onClick={()=>{modifyClient(product._id)}}>Modifier</button>
                     </div>
                 }
             </div>

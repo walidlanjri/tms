@@ -85,7 +85,7 @@ const ProductsList = () => {
                             products.map((product) => {
                                 return (
                                     <tr key={product._id}>
-                                        <td className="columnProduct1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnProduct1"><Link to={"/modifierProduit/"+product._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnProduct2">
                                             <Link to={
                                                 {
