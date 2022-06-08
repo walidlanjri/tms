@@ -83,7 +83,7 @@ const Truck = () => {
                             trucks.map((truck) => {
                                 return (
                                     <tr key={truck._id}>
-                                        <td className="columnTruck1"><Link to="/"><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnTruck1"><Link to={"/modifierLivreur/"+truck._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnTruck2">
                                             <Link to={
                                                 {

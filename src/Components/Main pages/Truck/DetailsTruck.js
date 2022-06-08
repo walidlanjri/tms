@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const DetailsTruck = () => {
     const parm = useParams();
@@ -36,6 +37,12 @@ const DetailsTruck = () => {
         if (fetched)
             setIsloading(false);
     }, [truckExist, truck, fetched]);
+
+    const history = useHistory();
+    const modifyTruck = (id)=>{
+        history.push(`/modifierLivreur/${id}`);
+
+    }
 
     return (
         isLoading ? <h3>Loading</h3> :
@@ -83,7 +90,7 @@ const DetailsTruck = () => {
 
                         </div>
 
-                        <button>Modifier</button>
+                        <button onClick={()=>{modifyTruck(truck._id)}}>Modifier</button>
                     </div>
                 }
             </div>
