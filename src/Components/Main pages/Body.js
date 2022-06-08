@@ -2,18 +2,20 @@ import Home from "./Home";
 import SideBar from "./SideBar";
 import {Route,Switch} from 'react-router-dom';
 import ProductsList from "./Products/Products";
-import Truck from "./Truck/Truck";
+import Truck from "./Trucks/Truck";
 import Clients from "./Clients/Clients";
 import DetailsPage from "./DetailsPage";
 import AddProduct from "./Products/AddProduct";
-import AddTruck from "./Truck/AddTruck";
-import DetailsTruck from "./Truck/DetailsTruck";
+import AddTruck from "./Trucks/AddTruck";
+import DetailsTruck from "./Trucks/DetailsTruck";
 import DetailsProduct from "./Products/DetailsProduct";
 import DetailsClient from "./Clients/DetailsClient";
 import Profile from "./Profile";
 import ModifyClient from "./Clients/ModifyClient";
 import ModifyProduct from "./Products/ModifyProduct";
-import ModifyTruck from "./Truck/ModifyTruck";
+import ModifyTruck from "./Trucks/ModifyTruck";
+import Shipement from "./Shipements/Shipement";
+import AddShipement from "./Shipements/AddShipement";
 
 
 
@@ -22,7 +24,6 @@ import ModifyTruck from "./Truck/ModifyTruck";
 
 
 const Body = (user) => {
-    console.log("user",user);
     return ( 
         <div className="body">
             <SideBar/>
@@ -75,7 +76,15 @@ const Body = (user) => {
                         <ModifyClient user={user}/>
                     </Route>
                     
+                    <Route path="/cargaisons">
+                        <Shipement user={user}/>
+                    </Route>
 
+                    <Route path="/ajoutCargaison">
+                        <AddShipement user={user}/>
+                    </Route>
+
+                    
             
                     <Route path="/profile">
                         <DetailsPage user={user}/>

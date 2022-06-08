@@ -13,7 +13,7 @@ body{
 @import url("./CssStyles/leadingPages.css");
 @import url("./CssStyles/footer.css");
 @import url("./CssStyles/sideBar.css");
-
+@import url("./CssStyles/tables/table-ship.css");
 @import url("./CssStyles/tables/table.css");
 @import url("./CssStyles/tables/table-products.css");
 @import url("./CssStyles/tables/table-trucks.css");

@@ -5,11 +5,10 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Truck = () => {
     const [isLoading, setIsloading] = useState(true);
-    const [trucksExist, setIsTrucks] = useState(false);
     const [trucks, setTrucks] = useState(null);
     const [fetched, setFetched] = useState(false);
-
-    const [isDeleted,setIsDeleted]=useState(false);
+    const [makeAvailableTruck,setMakeAvailable]=useState(false);
+    const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => {
         fetch("HTTP://localhost:3001/trucks")
@@ -29,7 +28,7 @@ const Truck = () => {
                     setTrucks(null);
                 }
             });
-    }, [isDeleted]);
+    }, [isDeleted,makeAvailableTruck]);
 
     useEffect(() => {
         if (fetched)
@@ -37,24 +36,63 @@ const Truck = () => {
     }, [trucks, fetched]);
 
 
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
 
-        fetch(`HTTP://localhost:3001/deleteTruck/${id}`,{method:"DELETE"})
+        fetch(`HTTP://localhost:3001/deleteTruck/${id}`, { method: "DELETE" })
             .then((res) => {
                 if (!res.ok) {
                     throw Error("failed to fetch");
                 }
                 return res.json();
             })
-            .then((data)=>{
-                if(data.deleted){
+            .then((data) => {
+                if (data.deleted) {
                     setIsDeleted(true);
                 }
             });
-            
-    }
+
+    }   
+
+    const [isModifed, setIsModifed] = useState(false);
+    const [isError, setError] = useState(false);
 
     const history = useHistory();
+
+
+    const makeAvailable = (id) => {
+        fetch(`HTTP://localhost:3001/modifyTruck/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                
+                state:"Disponible"
+                
+            })
+        })
+            .then((res) => {
+                if (!res.ok) {
+                    throw Error("failed to fetch");
+                }
+                return res.json();
+            })
+            .then((data) => {
+
+                if (data.status) {
+                    setIsModifed(true);
+                    setMakeAvailable(true);
+
+                }
+                else {
+                    setIsModifed(false);
+                    setError(true);
+                }
+            })
+            .catch((err) => console.log(err));
+
+    }
     return (
         <div className="tableContainer">
             <h2>List des camions</h2>
@@ -83,11 +121,11 @@ const Truck = () => {
                             trucks.map((truck) => {
                                 return (
                                     <tr key={truck._id}>
-                                        <td className="columnTruck1"><Link to={"/modifierLivreur/"+truck._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
+                                        <td className="columnTruck1"><Link to={"/modifierLivreur/" + truck._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnTruck2">
                                             <Link to={
                                                 {
-                                                    pathname: "/livreur/"+truck._id,
+                                                    pathname: "/livreur/" + truck._id,
                                                     state: {
                                                         Nom: truck.name,
                                                         Status: truck.state,
@@ -105,14 +143,22 @@ const Truck = () => {
                                         <td className="columnTruck5">{truck.width}</td>
                                         <td className="columnTruck6">{truck.length}</td>
                                         <td className="columnTruck7">{truck.depth}</td>
-                                        <td className="columnTruck8" ><button className="makeAvailable">Mettre disponible</button></td>
-                                        <td className="columnTruck9" ><Link to="/livreurs" onClick={()=>{handleDelete(truck._id)}}><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
+                                        <td className="columnTruck8" >
+                                            <button 
+                                                    className="makeAvailable"
+                                                    onClick={() => { makeAvailable(truck._id) }}
+                                                    disabled={truck.state==="Disponible"}
+                                                >
+                                                Mettre disponible
+                                            </button>
+                                        </td>
+                                        <td className="columnTruck9" ><Link to="/livreurs" onClick={() => { handleDelete(truck._id) }}><i className="fa-solid fa-trash-can fa-lg"></i></Link></td>
 
                                     </tr>
                                 )
                             })
                         }
-                       
+
                     </tbody>
                 </table>
             }

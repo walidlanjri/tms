@@ -36,7 +36,6 @@ const PrivateRoute = ({comp: Component,...rest}) => {
     useEffect(()=>{
         if(fetched)
             setIsloading(false);
-            console.log(user);
     },[userExist,user,fetched]);
     
     //if user exist

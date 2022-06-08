@@ -103,8 +103,13 @@
     margin-bottom: 0.3rem;
 }
 
-.makeAvailable:hover{
+.makeAvailable:hover:not([disabled]){
     background-color: #F5F3F4;
     cursor: pointer;
+}
+
+.makeAvailable:disabled{
+    background-color: rgb(228, 228, 228);
+
 }
   

@@ -44,7 +44,7 @@ const SideBar = () => {
                     <span>Clients</span>
                 </Link>
 
-                <Link to="/">
+                <Link to="/cargaisons">
                     <i className="fa-solid fa-truck-fast fa-lg"></i>
                     <span>Expéditions</span>
                 </Link>

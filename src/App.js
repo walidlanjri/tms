@@ -18,19 +18,25 @@ function App() {
 
         <Switch>
 
-          <Route exact path={["/","/connecter","/s'inscrire"]}>
+          <Route exact path={["/", "/connecter", "/s'inscrire"]}>
 
             <NavBar key="notLogged" />
-              <LeadingPages/>
+            <LeadingPages />
             <Footer />
 
           </Route>
 
           <PrivateRoute path={
-            ["/accueil", "/produits", ,"/produit/:id","/modifierProduit/:id","/livreurs","/livreur/:id","/modifierLivreur/:id", "/clients","/client/:id","/modifierClient/:id", "/details", "/profile","/ajoutProduit","/ajoutLivreur","/ajoutClient"]
-          } comp={<Body/>}>
+            ["/accueil",
+              "/profile",
+              "/produits", "/ajoutProduit", "/produit/:id", "/modifierProduit/:id",
+              "/livreurs", "/ajoutLivreur", "/livreur/:id", "/modifierLivreur/:id",
+              "/clients", "/client/:id", "/modifierClient/:id", "/ajoutClient",
+              "/cargaisons", "/modifierCargaisons/:id", "/ajoutCargaison", "/ajout-Produits-Cargaison/:id",
+            ]
+          } comp={<Body />}>
             <NavBar key="Logged" />
-            <Body/>
+            <Body />
           </PrivateRoute>
 
 
