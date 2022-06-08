@@ -1,31 +1,41 @@
 .columnShip1 {
     width: 50px;
-    padding-left: 60px;
+    padding-left: 40px;
 
 
 }
 
 .columnShip2 {
-    width: 80px;
+    width: 150px;
 }
 
 .columnShip3 {
-    width: 80px;
+    width: 150px;
     text-align: left;
 }
 
 .columnShip4 {
-    width: 80px;
+    width: 150px;
     text-align: left;
     
 }
 
 .columnShip5 {
     width: 150px;
-    text-align: center;
+    text-align: left;
 }
 
 .columnShip6 {
+    width: 170px;
+    text-align: left;
+}
+
+.columnShip7 {
+    width: 170px;
+    text-align: left;
+}
+
+.columnShip8 {
     width: 100px;
     text-align: center;
 }
@@ -48,25 +58,40 @@
     }
     
     table tbody tr .columnShip3:before {
-        content: "Livreur"
-    }
-
-    table tbody tr .columnShip4:before {
         content: "Client"
     }
 
-   
+    table tbody tr .columnShip4:before {
+        content: "Livreur"
+    }
+
+    table tbody tr .columnShip5:before {
+        content: "Poids total (KG)"
+    }
+
+    table tbody tr .columnShip6:before {
+        content: "Espace total (m³)"
+    }
+
+    .columnShip4,
+    .columnShip5,
+    .columnShip6{
+        padding-bottom: 1rem;
+    }
+
 
     .columnShip1,
     .columnShip2,
     .columnShip3,
     .columnShip4,
     .columnShip5,
-    .columnShip6{
+    .columnShip6,
+    .columnShip7,
+    .columnShip8{
         text-align: left
     }
 
-    .columnShip5{
+    .columnShip7{
         padding-left: 1.8rem;
     }
 

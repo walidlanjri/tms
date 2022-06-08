@@ -9,8 +9,8 @@ const Shipement = () => {
     const [fetched, setFetched] = useState(false);
     const [makeAvailabe, setMakeAvailable] = useState(false);
     const [isDeleted, setIsDeleted] = useState(false);
-    
-  
+
+
     useEffect(() => {
         fetch("HTTP://localhost:3001/shipements")
             .then((res) => {
@@ -22,7 +22,6 @@ const Shipement = () => {
             .then((data) => {
                 setFetched(true)
                 if (data.shipements) {
-                    console.log(data.shipements);
                     setShipements(data.shipements);
 
                 }
@@ -30,7 +29,7 @@ const Shipement = () => {
                     setShipements(null);
                 }
             });
-    }, [isDeleted,makeAvailabe]);
+    }, [isDeleted, makeAvailabe]);
 
     useEffect(() => {
         if (fetched)
@@ -54,12 +53,12 @@ const Shipement = () => {
                 }
             });
 
-    }   
+    }
 
-  
+
     const history = useHistory();
 
-    
+
 
 
     return (
@@ -76,10 +75,13 @@ const Shipement = () => {
                         <tr className="table-head">
                             <th className="columnShip1"></th>
                             <th className="columnShip2">Réference</th>
-                            <th className="columnShip3">Livreur</th>
-                            <th className="columnShip4">Client</th>
-                            <th className="columnShip5"></th>
-                            <th className="columnShip6"></th>
+                            <th className="columnShip3">Client</th>
+                            <th className="columnShip4">Livreur</th>
+                            
+                            <th className="columnShip5">Poids total (KG) </th>
+                            <th className="columnShip6">Espace total (m³)</th>
+                            <th className="columnShip7"></th>
+                            <th className="columnShip8"></th>
 
                         </tr>
                     </thead>
@@ -90,25 +92,32 @@ const Shipement = () => {
                                     <tr key={shipement._id}>
                                         <td className="columnShip1"><Link to={"/modifierCargaisons/" + shipement._id}><i className="fa-solid fa-square-pen fa-lg"></i></Link></td>
                                         <td className="columnShip2">
-                                            <Link to={"/cargaison/" + shipement._id}>{shipement.reference}</Link>
+                                            {shipement.reference}
                                         </td>
                                         <td className="columnShip3">
+                                            <Link to={"/client/" + JSON.parse(shipement.client)._id}>{JSON.parse(shipement.client).nom + " " + JSON.parse(shipement.client).prenom}</Link>
+                                        </td>
+
+                                        <td className="columnShip4">
                                             <Link to="/livreur/">{shipement.truck}</Link>
                                         </td>
-                                        <td className="columnShip4">
-                                            <Link to={"/client/"+JSON.parse(shipement.client)._id}>{JSON.parse(shipement.client).nom +" "+ JSON.parse(shipement.client).prenom }</Link>
-                                        </td>
+                                        
 
-                                        <td className="columnShip5" >
-                                            <Link to={"/ajout-Produits-Cargaison/" + shipement._id}><button className="addProdShip">
+                                        <td className="columnShip5">{shipement.totalWeight}</td>
 
-                                
-                                    Ajouter des produits
-                                </button></Link>
+                                        <td className="columnShip6">{shipement.totalSpace}</td>
+
+                                        <td className="columnShip7" >
+                                            <Link to={"/ajout-Produits-Cargaison/" + shipement._id}>
+                                                <button className="addProdShip">Ajouter des produits </button>
+                                            </Link>
                                         </td>
-                                        <td className="columnShip6" >
+                                        <td className="columnShip8" >
                                             <Link to="/cargaisons" onClick={() => { handleDelete(shipement._id) }}><i className="fa-solid fa-trash-can fa-lg"></i>
-                                            </Link></td>
+                                            </Link>
+                                        </td>
+
+
 
                                     </tr>
                                 )
@@ -117,11 +126,11 @@ const Shipement = () => {
 
                     </tbody>}
 
-              
 
 
 
-                  
+
+
                 </table>
             }
         </div >

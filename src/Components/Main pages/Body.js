@@ -16,6 +16,7 @@ import ModifyProduct from "./Products/ModifyProduct";
 import ModifyTruck from "./Trucks/ModifyTruck";
 import Shipement from "./Shipements/Shipement";
 import AddShipement from "./Shipements/AddShipement";
+import ModifyShipement from "./Shipements/ModifyShipement";
 
 
 
@@ -84,6 +85,9 @@ const Body = (user) => {
                         <AddShipement user={user}/>
                     </Route>
 
+                    <Route path="/modifierCargaisons/:id">
+                        <ModifyShipement user={user}/>
+                    </Route>
                     
             
                     <Route path="/profile">
